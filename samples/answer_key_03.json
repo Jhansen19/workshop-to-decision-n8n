@@ -1,0 +1,29 @@
+{
+  "workshop_summary": "Design session 1 for one Nordic loyalty programme: points, tiers, brand, migration and conversion.",
+  "decisions": [
+    { "decision": "One points currency across all four markets, with points converting to vouchers and three tiers on top", "scope": "Group" },
+    { "decision": "Keep the banner programme names for customers for now (Aurora Plus in DK, Lumi Club in SE/NO/FI)", "scope": "Group with local variant" }
+  ],
+  "open_issues": [
+    { "issue": "Migration approach: automatic migration or fresh consent", "escalate_to": "Pending legal opinion (30 November)" },
+    { "issue": "Points conversion rate between the programmes", "escalate_to": "Next session, after finance modelling" },
+    { "issue": "Whether the Swedish birthday bonus stays as a local add-on", "escalate_to": "After usage data" }
+  ],
+  "actions": [
+    { "action": "Give a legal opinion on consent for migrating members", "owner": "Signe", "due_date": "30 November" },
+    { "action": "Model three points conversion options", "owner": "Mikael", "due_date": "next session" },
+    { "action": "Pull usage data on the Swedish birthday bonus", "owner": "Johan", "due_date": null },
+    { "action": "Create a customer and store staff communication plan", "owner": "UNASSIGNED", "due_date": null }
+  ],
+  "risks": [
+    { "risk": "Members leave if the points conversion feels unfair (4% of Gold members lost in 2021)", "source": "stated" },
+    { "risk": "The conversion rate increases the points liability on the balance sheet", "source": "inferred" },
+    { "risk": "Automatic migration may breach consent rules for older Lumi Club members", "source": "stated" },
+    { "risk": "The app team has no capacity until February, so launch slips", "source": "stated" }
+  ],
+  "dependencies": [
+    { "dependent": "Launch of one programme in one app", "depends_on": "CRM consolidation in Q2 next year", "owner": "Pekka" },
+    { "dependent": "Migration approach", "depends_on": "Legal opinion on consent", "owner": "Signe" },
+    { "dependent": "Promising a conversion rate to members", "depends_on": "Finance modelling of conversion options", "owner": "Mikael" }
+  ]
+}

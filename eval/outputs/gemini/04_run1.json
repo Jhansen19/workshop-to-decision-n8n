@@ -1,0 +1,125 @@
+{
+  "transcript_id": "04",
+  "model": "gemini",
+  "run": 1,
+  "latency_s": 36.92,
+  "error": null,
+  "extraction": {
+    "workshop_summary": "The workshop focused on aligning the Nordic customer service operating model for Aurora Beauty Group. Key decisions included moving to a single ticketing system while maintaining local language support, and establishing a minimum weekday opening hour standard (until 18:00). Several operational dependencies regarding CRM consolidation and open questions regarding weekend coverage and performance metrics were identified.",
+    "decisions": [
+      {
+        "decision": "Implement one common ticketing system for the entire Group.",
+        "rationale": "To enable cross-market visibility and resolve issues where customers fall between systems.",
+        "scope": "Group",
+        "decision_owner": "Louise Kristensen",
+        "requires_signoff": true
+      },
+      {
+        "decision": "Maintain local language support for customers via local employees.",
+        "rationale": "Non-negotiable requirement for customer experience and market relevance.",
+        "scope": "Group with local variant",
+        "decision_owner": "Louise Kristensen",
+        "requires_signoff": false
+      },
+      {
+        "decision": "Establish a common minimum opening standard of 18:00 on weekdays across all markets.",
+        "rationale": "To standardize service levels; local markets may extend hours if they fund the additional cost.",
+        "scope": "Group with local variant",
+        "decision_owner": "Louise Kristensen",
+        "requires_signoff": false
+      },
+      {
+        "decision": "Standardize customer satisfaction measurement across all markets.",
+        "rationale": "To enable accurate cross-market performance comparison.",
+        "scope": "Group",
+        "decision_owner": "Louise Kristensen",
+        "requires_signoff": false
+      }
+    ],
+    "open_issues": [
+      {
+        "issue": "Weekend coverage strategy for small teams (specifically Finland).",
+        "options_discussed": [
+          "Internal staffing",
+          "Outsourcing to external partner"
+        ],
+        "escalate_to": "Louise Kristensen"
+      },
+      {
+        "issue": "Selection of specific customer satisfaction metric (e.g., NPS vs. other).",
+        "options_discussed": [],
+        "escalate_to": "Louise Kristensen"
+      },
+      {
+        "issue": "Ownership of creating common response templates and knowledge base.",
+        "options_discussed": [],
+        "escalate_to": "Louise Kristensen"
+      }
+    ],
+    "actions": [
+      {
+        "action": "Prepare pros/cons analysis for outsourcing weekend coverage.",
+        "owner": "Mika Korhonen",
+        "due_date": null,
+        "priority": "Medium",
+        "linked_decision": "None"
+      },
+      {
+        "action": "Investigate feasibility of a temporary solution for ticketing system prior to Q2 CRM consolidation.",
+        "owner": "Jesper Friis",
+        "due_date": null,
+        "priority": "High",
+        "linked_decision": "Implement one common ticketing system for the entire Group."
+      },
+      {
+        "action": "Develop and distribute communication plan regarding the 'common team' structure to mitigate staff anxiety.",
+        "owner": "Louise Kristensen",
+        "due_date": null,
+        "priority": "High",
+        "linked_decision": "None"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Staff anxiety and potential turnover due to fear of headcount reductions.",
+        "impact": "High",
+        "likelihood": "High",
+        "mitigation": "Clear communication plan from Group leadership.",
+        "owner": "Louise Kristensen",
+        "source": "stated"
+      },
+      {
+        "risk": "Inconsistent customer service quality due to lack of shared knowledge base/templates.",
+        "impact": "Medium",
+        "likelihood": "High",
+        "mitigation": "Develop common knowledge base and templates.",
+        "owner": "UNASSIGNED",
+        "source": "inferred"
+      },
+      {
+        "risk": "Delay in ticketing system implementation due to CRM consolidation timeline.",
+        "impact": "High",
+        "likelihood": "High",
+        "mitigation": "Investigate temporary IT solutions.",
+        "owner": "Jesper Friis",
+        "source": "stated"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependent": "Common ticketing system implementation",
+        "depends_on": "CRM system consolidation",
+        "owner": "Jesper Friis"
+      }
+    ],
+    "governance_flags": [
+      "3 open issue(s) need escalation"
+    ],
+    "model_used": "gemini",
+    "run_id": "eval-1793623674235",
+    "workshop": "Evaluation run",
+    "workshop_date": "",
+    "markets": ""
+  },
+  "memo": "# Evaluation run: Decision Memo\n\n**Date: N/A | Markets: N/A | Run ID: eval-1793623674235**\n\n## Bottom line\nThe workshop established a unified Nordic customer service operating model for Aurora Beauty Group, centered on a single ticketing system and standardized weekday service hours. Sign-off is required for the ticketing system implementation to proceed. The primary risk is staff turnover resulting from the transition to a common team structure.\n\n## Decisions made\n\n| Decision | Scope | Owner |\n| :--- | :--- | :--- |\n| Implement one common ticketing system for the entire Group | Group | Louise Kristensen |\n| Maintain local language support via local employees | Group with local variant | Louise Kristensen |\n| Establish a common minimum weekday opening standard of 18:00 | Group with local variant | Louise Kristensen |\n| Standardize customer satisfaction measurement across all markets | Group | Louise Kristensen |\n\n## Decisions requiring your sign-off\n1. **Common Ticketing System:** Approval to proceed with a single ticketing system for the Group. *Recommendation: Approve, contingent on Jesper Friis’s investigation into temporary solutions to bridge the gap until CRM consolidation.*\n\n## Open issues for escalation\n*   **Weekend coverage strategy (Finland):** Options include internal staffing or outsourcing. *Recommended next step: Review the pros/cons analysis currently being prepared by Mika Korhonen.*\n*   **Customer satisfaction metric selection:** No specific metric (e.g., NPS) has been selected. *Recommended next step: Steering committee to define the preferred performance indicator.*\n*   **Knowledge base ownership:** Responsibility for creating response templates and the knowledge base is undefined. *Recommended next step: Assign ownership to ensure service consistency.*\n\n## Key risks & dependencies\n1. **Staff anxiety:** High risk of turnover due to fear of headcount reductions; requires proactive communication.\n2. **Implementation delay:** The ticketing system rollout is dependent on the CRM consolidation timeline.\n3. **Service inconsistency:** Lack of a shared knowledge base threatens service quality across markets.\n\n## Next steps\n\n| Action | Owner | Due |\n| :--- | :--- | :--- |\n| Prepare pros/cons analysis for outsourcing weekend coverage | Mika Korhonen | TBD |\n| Investigate temporary ticketing solution prior to Q2 CRM consolidation | Jesper Friis | TBD |\n| Develop and distribute communication plan regarding 'common team' structure | Louise Kristensen | TBD |\n\n## Governance flags\n*   3 open issue(s) need escalation."
+}

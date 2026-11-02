@@ -1,0 +1,731 @@
+{
+  "id": "WorkshopDecision",
+  "name": "Workshop to Decision",
+  "nodes": [
+    {
+      "id": "6d5c5b92-f9fc-4fa7-bc38-c6568a352f42",
+      "name": "On form submission",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "formTitle": "Workshop to Decision",
+        "formDescription": "Paste the notes or transcript from a cross-functional workshop. You'll get a draft decision memo to approve by email.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Workshop title",
+              "fieldName": "workshop_title",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Workshop date",
+              "fieldName": "workshop_date",
+              "fieldType": "date"
+            },
+            {
+              "fieldLabel": "Markets in scope",
+              "fieldName": "markets",
+              "fieldType": "checkbox",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "DK"
+                  },
+                  {
+                    "option": "SE"
+                  },
+                  {
+                    "option": "NO"
+                  },
+                  {
+                    "option": "FI"
+                  },
+                  {
+                    "option": "Group"
+                  }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Notes or transcript",
+              "fieldName": "notes",
+              "fieldType": "textarea",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Decision owner / approver email",
+              "fieldName": "approver_email",
+              "fieldType": "email",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Facilitator email",
+              "fieldName": "facilitator_email",
+              "fieldType": "email",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "path": "workshop-to-decision",
+          "buttonLabel": "Create decision memo"
+        }
+      },
+      "webhookId": "7d1c2a4e-5b3f-4e8a-9c61-0f2d8b7a3e01"
+    },
+    {
+      "id": "719306b1-7f73-449f-921b-a072616ce90e",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4aa4912c-258b-4056-b05b-593f152fb31c",
+              "name": "run_id",
+              "value": "={{ $now.toFormat('yyyyMMdd-HHmmss') }}",
+              "type": "string"
+            },
+            {
+              "id": "531ecbd9-e65d-4b72-a126-b006a53d9f00",
+              "name": "created_at",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "365d5588-fa3f-4ae2-9c20-4dd6d10951aa",
+              "name": "markets_text",
+              "value": "={{ [].concat($json.markets ?? []).join(', ') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      }
+    },
+    {
+      "id": "2a7a7b79-4325-44ea-a44b-176307d81cbb",
+      "name": "Call – Gemini",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "ExtractMemoWf001",
+          "mode": "list",
+          "cachedResultName": "Extract & Memo"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "transcript": "={{ $('Edit Fields').item.json.notes }}",
+            "workshop_title": "={{ $('Edit Fields').item.json.workshop_title }}",
+            "workshop_date": "={{ $('Edit Fields').item.json.workshop_date }}",
+            "markets": "={{ $('Edit Fields').item.json.markets_text }}",
+            "run_id": "={{ $('Edit Fields').item.json.run_id }}",
+            "model": "gemini"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "transcript",
+              "displayName": "transcript",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "model",
+              "displayName": "model",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "workshop_title",
+              "displayName": "workshop_title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "workshop_date",
+              "displayName": "workshop_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "markets",
+              "displayName": "markets",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "run_id",
+              "displayName": "run_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "id": "137e7eb0-8850-4683-a34b-47040f064cce",
+      "name": "Call – Groq fallback",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        660,
+        160
+      ],
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "ExtractMemoWf001",
+          "mode": "list",
+          "cachedResultName": "Extract & Memo"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "transcript": "={{ $('Edit Fields').item.json.notes }}",
+            "workshop_title": "={{ $('Edit Fields').item.json.workshop_title }}",
+            "workshop_date": "={{ $('Edit Fields').item.json.workshop_date }}",
+            "markets": "={{ $('Edit Fields').item.json.markets_text }}",
+            "run_id": "={{ $('Edit Fields').item.json.run_id }}",
+            "model": "groq"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "transcript",
+              "displayName": "transcript",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "model",
+              "displayName": "model",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "workshop_title",
+              "displayName": "workshop_title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "workshop_date",
+              "displayName": "workshop_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "markets",
+              "displayName": "markets",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "run_id",
+              "displayName": "run_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "be486465-8b18-415c-b6f0-11f40f150641",
+      "name": "Memo to HTML",
+      "type": "n8n-nodes-base.markdown",
+      "typeVersion": 1,
+      "position": [
+        880,
+        0
+      ],
+      "parameters": {
+        "mode": "markdownToHtml",
+        "markdown": "={{ $json.memo }}",
+        "destinationKey": "memo_html",
+        "options": {
+          "tables": true
+        }
+      }
+    },
+    {
+      "id": "ee1a1bf0-af73-4cd9-a1d0-df39a72456e9",
+      "name": "Send memo for review",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1100,
+        0
+      ],
+      "parameters": {
+        "sendTo": "={{ $('Edit Fields').item.json.approver_email }}",
+        "subject": "=[For review] {{ $('Edit Fields').item.json.workshop_title }}: decision memo",
+        "emailType": "html",
+        "message": "={{ $('Memo to HTML').item.json.memo_html }}<hr><p><b>Drafted by:</b> {{ $('Memo to HTML').item.json.model_used }} &middot; <b>Run ID:</b> {{ $('Edit Fields').item.json.run_id }}</p><p>An approval request follows in a separate email.</p>",
+        "options": {
+          "appendAttribution": false
+        }
+      }
+    },
+    {
+      "id": "6b13d629-4dc8-43ca-822a-70d567559b4b",
+      "name": "Ask for approval",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1320,
+        0
+      ],
+      "parameters": {
+        "operation": "sendAndWait",
+        "sendTo": "={{ $('Edit Fields').item.json.approver_email }}",
+        "subject": "=[Approval needed] {{ $('Edit Fields').item.json.workshop_title }}",
+        "message": "=Please review the decision memo for \"{{ $('Edit Fields').item.json.workshop_title }}\" (sent to you in the previous email) and approve or reject it.\n\nGovernance flags:\n{{ ($('Memo to HTML').item.json.extraction.governance_flags || []).map(f => '- ' + f).join('\\n') || '- none' }}\n\nDrafted by: {{ $('Memo to HTML').item.json.model_used }}. Nothing is shared until you approve.",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "approveLabel": "Approve memo",
+            "disapproveLabel": "Reject"
+          }
+        },
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "webhookId": "7d1c2a4e-5b3f-4e8a-9c61-0f2d8b7a3e02"
+    },
+    {
+      "id": "6dfafb02-44cf-431b-be6f-5bebe644200b",
+      "name": "Approved?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1540,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1d05744c-7f8a-4b9c-a846-0e8c80a44eb6",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "902a3ea9-a32e-4661-a44a-e267a9c1f5a9",
+      "name": "Rows – Actions",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        -300
+      ],
+      "parameters": {
+        "jsCode": "const m = $('Memo to HTML').first().json;\nconst e = m.extraction;\nconst createdAt = $('Edit Fields').first().json.created_at;\nreturn (e.actions || []).map(x => ({ json: {\n    run_id: e.run_id,\n    workshop: e.workshop,\n    action: x.action,\n    owner: x.owner ?? 'UNASSIGNED',\n    due_date: x.due_date ?? '',\n    priority: x.priority ?? '',\n    linked_decision: x.linked_decision ?? '',\n    status: 'Open',\n    model_used: e.model_used,\n    created_at: createdAt\n} }));"
+      }
+    },
+    {
+      "id": "fb51aef6-539a-45c0-a1c5-83f24bcf1a36",
+      "name": "Rows – Risks",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        -120
+      ],
+      "parameters": {
+        "jsCode": "const m = $('Memo to HTML').first().json;\nconst e = m.extraction;\nconst createdAt = $('Edit Fields').first().json.created_at;\nreturn (e.risks || []).map(x => ({ json: {\n    run_id: e.run_id,\n    workshop: e.workshop,\n    risk: x.risk,\n    impact: x.impact ?? '',\n    likelihood: x.likelihood ?? '',\n    mitigation: x.mitigation ?? '',\n    owner: x.owner ?? '',\n    source: x.source ?? ''\n} }));"
+      }
+    },
+    {
+      "id": "0f3dfd11-6d05-417e-a48a-8849c76c9455",
+      "name": "Rows – Decisions",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        60
+      ],
+      "parameters": {
+        "jsCode": "const m = $('Memo to HTML').first().json;\nconst e = m.extraction;\nconst createdAt = $('Edit Fields').first().json.created_at;\nreturn (e.decisions || []).map(x => ({ json: {\n    run_id: e.run_id,\n    workshop: e.workshop,\n    decision: x.decision,\n    rationale: x.rationale ?? '',\n    scope: x.scope ?? '',\n    decision_owner: x.decision_owner ?? '',\n    requires_signoff: x.requires_signoff ?? ''\n} }));"
+      }
+    },
+    {
+      "id": "2da16c20-1685-4ee1-bf0e-e85266e1050c",
+      "name": "Sheets – Actions",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2000,
+        -300
+      ],
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Actions",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "8140bd37-9b16-43b6-919c-df46cf6cf047",
+      "name": "Sheets – Risks",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2000,
+        -120
+      ],
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Risks",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "d6aa6688-99d4-4608-b88b-995a498ea17a",
+      "name": "Sheets – Decisions",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2000,
+        60
+      ],
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Decisions",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "812520d1-1878-46ee-84c1-e9d78dc18889",
+      "name": "Send final memo",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1780,
+        240
+      ],
+      "parameters": {
+        "sendTo": "={{ $('Edit Fields').item.json.approver_email }}, {{ $('Edit Fields').item.json.facilitator_email }}",
+        "subject": "=[Approved] {{ $('Edit Fields').item.json.workshop_title }}: decision memo",
+        "emailType": "html",
+        "message": "={{ $('Memo to HTML').item.json.memo_html }}",
+        "options": {
+          "appendAttribution": false
+        }
+      }
+    },
+    {
+      "id": "1adf18f1-c1a6-4989-8a54-fe72bae8e576",
+      "name": "Notify: memo rejected",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1780,
+        420
+      ],
+      "parameters": {
+        "sendTo": "={{ $('Edit Fields').item.json.facilitator_email }}",
+        "subject": "=[Rejected] {{ $('Edit Fields').item.json.workshop_title }}: decision memo",
+        "emailType": "text",
+        "message": "=The decision owner rejected the AI-drafted memo for \"{{ $('Edit Fields').item.json.workshop_title }}\". Nothing was published to the trackers. Please revise the notes or the memo with the decision owner and resubmit.",
+        "options": {
+          "appendAttribution": false
+        }
+      }
+    }
+  ],
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Call – Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call – Gemini": {
+      "main": [
+        [
+          {
+            "node": "Memo to HTML",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Call – Groq fallback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call – Groq fallback": {
+      "main": [
+        [
+          {
+            "node": "Memo to HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memo to HTML": {
+      "main": [
+        [
+          {
+            "node": "Send memo for review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send memo for review": {
+      "main": [
+        [
+          {
+            "node": "Ask for approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask for approval": {
+      "main": [
+        [
+          {
+            "node": "Approved?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approved?": {
+      "main": [
+        [
+          {
+            "node": "Rows – Actions",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Rows – Risks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Rows – Decisions",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send final memo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Notify: memo rejected",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rows – Actions": {
+      "main": [
+        [
+          {
+            "node": "Sheets – Actions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rows – Risks": {
+      "main": [
+        [
+          {
+            "node": "Sheets – Risks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rows – Decisions": {
+      "main": [
+        [
+          {
+            "node": "Sheets – Decisions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "errorWorkflow": "ErrorHandlerWf01"
+  },
+  "active": false
+}

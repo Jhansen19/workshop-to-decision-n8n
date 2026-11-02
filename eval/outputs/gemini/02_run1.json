@@ -1,0 +1,128 @@
+{
+  "transcript_id": "02",
+  "model": "gemini",
+  "run": 1,
+  "latency_s": 14.15,
+  "error": null,
+  "extraction": {
+    "workshop_summary": "The workshop established the decision rights framework for assortment management between Group and local markets. Key agreements include a 80/20 split for core vs. local range, a new Group range forum for multi-market listings, and a commitment to align on a unified category tree. Pricing authority for the local range remains an open issue.",
+    "decisions": [
+      {
+        "decision": "Core range (80% of SKUs) is decided by Group Category Management; local range (up to 20% of SKUs) is decided by the market commercial lead.",
+        "rationale": "Standardizes core assortment while allowing for local market relevance.",
+        "scope": "Group with local variant",
+        "decision_owner": "Karin Ekström",
+        "requires_signoff": false
+      },
+      {
+        "decision": "New brands listed in more than one market must be approved by the Group range forum.",
+        "rationale": "Prevents fragmented supplier negotiations and ensures cross-market consistency.",
+        "scope": "Group",
+        "decision_owner": "Karin Ekström",
+        "requires_signoff": false
+      },
+      {
+        "decision": "The 20% local range share will be reviewed after six months.",
+        "rationale": "Addresses concerns regarding the sufficiency of the local range allocation.",
+        "scope": "Group with local variant",
+        "decision_owner": "Karin Ekström",
+        "requires_signoff": false
+      }
+    ],
+    "open_issues": [
+      {
+        "issue": "Pricing authority and guardrails for the local range.",
+        "options_discussed": [
+          "Group sets pricing for all ranges to manage margin",
+          "Markets set pricing for local range to maintain local agility",
+          "Group sets a margin floor for local range"
+        ],
+        "escalate_to": "Karin Ekström"
+      }
+    ],
+    "actions": [
+      {
+        "action": "Develop two options for local range pricing/margin management.",
+        "owner": "Henrik Dahl and Maja Persson",
+        "due_date": "2026-11-04",
+        "priority": "High",
+        "linked_decision": "None"
+      },
+      {
+        "action": "Lead the technical development of a shared category tree.",
+        "owner": "Rasmus Juul",
+        "due_date": null,
+        "priority": "High",
+        "linked_decision": "None"
+      },
+      {
+        "action": "Convene category managers to agree on the shared category tree structure.",
+        "owner": "Karin Ekström",
+        "due_date": null,
+        "priority": "High",
+        "linked_decision": "None"
+      },
+      {
+        "action": "Draft key messages for internal communication regarding the new operating model.",
+        "owner": "Ole Madsen",
+        "due_date": null,
+        "priority": "Medium",
+        "linked_decision": "None"
+      },
+      {
+        "action": "Draft the RACI matrix for assortment management (listing to delisting).",
+        "owner": "Karin Ekström",
+        "due_date": "2026-11-13",
+        "priority": "Medium",
+        "linked_decision": "None"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Suppliers may attempt to lock in favorable terms with individual markets before the Group range forum is fully operational.",
+        "impact": "High",
+        "likelihood": "High",
+        "mitigation": "Proactive communication with key suppliers by Group leadership.",
+        "owner": "Karin Ekström",
+        "source": "stated"
+      },
+      {
+        "risk": "Internal resistance and anxiety among local buyers regarding job security and loss of autonomy.",
+        "impact": "Medium",
+        "likelihood": "High",
+        "mitigation": "Proper briefing and clear communication of the new operating model.",
+        "owner": "Ole Madsen",
+        "source": "inferred"
+      },
+      {
+        "risk": "Inability to execute the new decision rights due to fragmented PIM systems and data silos.",
+        "impact": "High",
+        "likelihood": "High",
+        "mitigation": "Prioritize the creation of a shared category tree and reporting view.",
+        "owner": "Rasmus Juul",
+        "source": "stated"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependent": "Implementation of new decision rights",
+        "depends_on": "Unified category tree and shared reporting view",
+        "owner": "Rasmus Juul"
+      },
+      {
+        "dependent": "Agreement on category tree",
+        "depends_on": "Category managers meeting",
+        "owner": "Karin Ekström"
+      }
+    ],
+    "governance_flags": [
+      "1 open issue(s) need escalation"
+    ],
+    "model_used": "gemini",
+    "run_id": "eval-1793623453891",
+    "workshop": "Evaluation run",
+    "workshop_date": "",
+    "markets": ""
+  },
+  "memo": "# Evaluation run: Decision Memo\n**Date: N/A | Markets: N/A | Run ID: eval-1793623453891**\n\n## Bottom line\nThe workshop established a new decision rights framework for assortment management, defining an 80/20 split between Group and local market ranges. We require steering committee guidance on the final pricing authority model for local ranges. The primary risk is supplier fragmentation during the transition period before the Group range forum is fully operational.\n\n## Decisions made\n\n| Decision | Scope | Owner |\n| :--- | :--- | :--- |\n| Core range (80% of SKUs) decided by Group; local range (20%) by market lead. | Group with local variant | Karin Ekström |\n| New brands listed in >1 market require Group range forum approval. | Group | Karin Ekström |\n| The 20% local range allocation will be reviewed after six months. | Group with local variant | Karin Ekström |\n\n## Decisions requiring your sign-off\n1. **Pricing authority for local range:** We recommend the steering committee select one of the following: (a) Group sets pricing for all ranges, (b) Markets set pricing for local range, or (c) Group sets a margin floor for local range.\n\n## Open issues for escalation\n* **Pricing authority and guardrails for the local range:** Options include Group-led pricing, market-led pricing, or a Group-mandated margin floor. \n    * *Recommended next step:* Review the two options currently being developed by Henrik Dahl and Maja Persson (due 2026-11-04) to determine the optimal balance between margin control and local agility.\n\n## Key risks & dependencies\n1. **Supplier fragmentation:** Suppliers may attempt to secure favorable terms with individual markets before the Group range forum is fully operational.\n2. **Technical execution:** Inability to execute decision rights due to fragmented PIM systems and data silos.\n3. **Internal resistance:** Potential anxiety among local buyers regarding loss of autonomy and job security.\n\n## Next steps\n\n| Action | Owner | Due |\n| :--- | :--- | :--- |\n| Develop two options for local range pricing/margin management | Henrik Dahl & Maja Persson | 2026-11-04 |\n| Draft the RACI matrix for assortment management | Karin Ekström | 2026-11-13 |\n| Lead technical development of a shared category tree | Rasmus Juul | TBD |\n| Convene category managers to agree on category tree structure | Karin Ekström | TBD |\n| Draft internal communication regarding the new operating model | Ole Madsen | TBD |\n\n## Governance flags\n* 1 open issue(s) need escalation"
+}

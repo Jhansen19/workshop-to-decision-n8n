@@ -1,0 +1,307 @@
+{
+  "id": "ExtractMemoWf001",
+  "name": "Extract & Memo",
+  "nodes": [
+    {
+      "id": "7f630194-2a7f-49d2-b167-3f77c2882062",
+      "name": "When Executed by Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "transcript"
+            },
+            {
+              "name": "model"
+            },
+            {
+              "name": "workshop_title"
+            },
+            {
+              "name": "workshop_date"
+            },
+            {
+              "name": "markets"
+            },
+            {
+              "name": "run_id"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ab7d1a57-4e4b-4b4a-ba01-0d6c705a0f32",
+      "name": "Extract",
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1.2,
+      "position": [
+        260,
+        0
+      ],
+      "parameters": {
+        "text": "={{ $json.transcript }}",
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"workshop_summary\": {\n      \"type\": \"string\"\n    },\n    \"decisions\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"decision\": {\n            \"type\": \"string\"\n          },\n          \"rationale\": {\n            \"type\": \"string\"\n          },\n          \"scope\": {\n            \"type\": \"string\"\n          },\n          \"decision_owner\": {\n            \"type\": \"string\"\n          },\n          \"requires_signoff\": {\n            \"type\": \"boolean\"\n          }\n        }\n      }\n    },\n    \"open_issues\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"issue\": {\n            \"type\": \"string\"\n          },\n          \"options_discussed\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            }\n          },\n          \"escalate_to\": {\n            \"type\": \"string\"\n          }\n        }\n      }\n    },\n    \"actions\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"action\": {\n            \"type\": \"string\"\n          },\n          \"owner\": {\n            \"type\": \"string\"\n          },\n          \"due_date\": {\n            \"type\": [\n              \"string\",\n              \"null\"\n            ]\n          },\n          \"priority\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"High\",\n              \"Medium\",\n              \"Low\"\n            ]\n          },\n          \"linked_decision\": {\n            \"type\": \"string\"\n          }\n        }\n      }\n    },\n    \"risks\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"risk\": {\n            \"type\": \"string\"\n          },\n          \"impact\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"High\",\n              \"Medium\",\n              \"Low\"\n            ]\n          },\n          \"likelihood\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"High\",\n              \"Medium\",\n              \"Low\"\n            ]\n          },\n          \"mitigation\": {\n            \"type\": \"string\"\n          },\n          \"owner\": {\n            \"type\": \"string\"\n          },\n          \"source\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"stated\",\n              \"inferred\"\n            ]\n          }\n        }\n      }\n    },\n    \"dependencies\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"dependent\": {\n            \"type\": \"string\"\n          },\n          \"depends_on\": {\n            \"type\": \"string\"\n          },\n          \"owner\": {\n            \"type\": \"string\"\n          }\n        }\n      }\n    }\n  },\n  \"required\": [\n    \"workshop_summary\",\n    \"decisions\",\n    \"open_issues\",\n    \"actions\",\n    \"risks\",\n    \"dependencies\"\n  ]\n}",
+        "options": {
+          "systemPromptTemplate": "You are a transformation PMO analyst. You read raw workshop notes from cross-functional\noperating model workshops in a multi-market Nordic retail group and extract a precise,\nstructured record.\n\nRules:\n- A DECISION is only something explicitly agreed in the session. If something was\n  proposed, debated or deferred, it is an OPEN ISSUE, not a decision. If a principle is\n  agreed but a detail is left open, record the decision AND an open issue for the detail.\n- Never invent owners or dates. If not stated, use \"UNASSIGNED\" for owners and null for dates.\n  If someone is asked to own something but hands it back, the owner is whoever finally accepts it.\n- Read the whole transcript. Do not rely on any summary or read-back at the end; it may be incomplete.\n- Flag implied risks as well as stated ones, and mark implied ones \"source\": \"inferred\".\n- Classify each decision's scope as \"Group\", \"Local (<market>)\" or \"Group with local variant\".\n- Capture cross-functional DEPENDENCIES (X cannot happen until Y).\n- The input may be in English, Danish, Swedish, Norwegian or Finnish. Always write the output in English.\n- Use concise, business English. No filler.\n- Output ONLY valid JSON matching the schema."
+        }
+      }
+    },
+    {
+      "id": "bae178dd-ea34-43a1-942e-9c1aaff5a200",
+      "name": "Validate",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const input = $('When Executed by Another Workflow').first().json;\nconst d = $json.output ?? $json;\nfor (const k of ['decisions','open_issues','actions','risks','dependencies']) d[k] = d[k] ?? [];\nconst flags = [];\nconst unowned = d.actions.filter(a => !a.owner || a.owner === 'UNASSIGNED').length;\nif (unowned) flags.push(`${unowned} action(s) have no owner`);\nd.risks.filter(r => r.impact === 'High' && r.likelihood === 'High' && !r.mitigation)\n  .forEach(r => flags.push(`High/High risk without mitigation: ${r.risk}`));\nif (d.open_issues.length) flags.push(`${d.open_issues.length} open issue(s) need escalation`);\nreturn [{ json: { ...d, governance_flags: flags, model_used: input.model, run_id: input.run_id,\n  workshop: input.workshop_title, workshop_date: input.workshop_date, markets: input.markets } }];"
+      }
+    },
+    {
+      "id": "2a788000-0ca9-4549-81be-ef10a012b22c",
+      "name": "Memo",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        800,
+        0
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "=Write a one-page decision memo for a senior steering committee, based ONLY on the JSON below.\nStructure (Markdown):\n# <Workshop title>: Decision Memo\n**Date | Markets | Run ID**\n## Bottom line (3 sentences max: what was decided, what needs sign-off, biggest risk)\n## Decisions made (table: Decision | Scope | Owner)\n## Decisions requiring your sign-off (numbered, each with a clear recommendation)\n## Open issues for escalation (options discussed + recommended next step)\n## Key risks & dependencies (top 3 only)\n## Next steps (table: Action | Owner | Due)\n## Governance flags\nTone: crisp, neutral, no jargon, no filler. Write in English. Do not add facts not present in the JSON.\n\nJSON: {{ JSON.stringify($json) }}"
+      }
+    },
+    {
+      "id": "4c21bca5-2f0c-445f-a184-7bdaff733164",
+      "name": "Package",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1100,
+        0
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "106a6171-e18b-424b-b200-98dcfb0cd68b",
+              "name": "extraction",
+              "value": "={{ $('Validate').item.json }}",
+              "type": "object"
+            },
+            {
+              "id": "a16ee77e-f476-4f1d-b1f5-629160d96fe0",
+              "name": "memo",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            },
+            {
+              "id": "5c80bd35-3e00-4576-ac3e-612bcb2839c2",
+              "name": "model_used",
+              "value": "={{ $('Validate').item.json.model_used }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "721e42d2-fb6e-4bce-86eb-5dba4cdf9631",
+      "name": "Model Selector",
+      "type": "@n8n/n8n-nodes-langchain.modelSelector",
+      "typeVersion": 1,
+      "position": [
+        500,
+        260
+      ],
+      "parameters": {
+        "numberInputs": 2,
+        "rules": {
+          "rule": [
+            {
+              "modelIndex": 2,
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "10ff2bec-e51f-428c-8346-44f86488de93",
+                    "leftValue": "={{ $('When Executed by Another Workflow').first().json.model }}",
+                    "rightValue": "groq",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "modelIndex": 1,
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "02f45d45-7b26-42b7-a821-bc08b6bc43bd",
+                    "leftValue": "={{ $('When Executed by Another Workflow').first().json.model }}",
+                    "rightValue": "groq",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEquals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c7a04c0b-0116-4a42-9e8f-94a089718231",
+      "name": "Gemini Flash-Lite",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        460
+      ],
+      "parameters": {
+        "modelName": "models/gemini-3.1-flash-lite",
+        "options": {
+          "temperature": 0.1,
+          "maxOutputTokens": 8192
+        }
+      }
+    },
+    {
+      "id": "409148b0-9473-4f80-beb0-34d64af7b74c",
+      "name": "Groq gpt-oss-120b",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        620,
+        460
+      ],
+      "parameters": {
+        "model": "openai/gpt-oss-120b",
+        "options": {
+          "temperature": 0.1,
+          "maxTokensToSample": 8192
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Extract",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract": {
+      "main": [
+        [
+          {
+            "node": "Validate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate": {
+      "main": [
+        [
+          {
+            "node": "Memo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memo": {
+      "main": [
+        [
+          {
+            "node": "Package",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Model Selector": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Extract",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Memo",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini Flash-Lite": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Model Selector",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq gpt-oss-120b": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Model Selector",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "active": false
+}

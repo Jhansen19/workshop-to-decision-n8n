@@ -1,0 +1,115 @@
+Workshop: One Nordic Loyalty Programme – Design Session 1
+Company: Aurora Beauty Group (fictional) – banners Aurora (DK) and Lumi (SE/NO/FI)
+Date: 23 October 2026, 10:00–12:30, Copenhagen hub + Teams
+Attendees: Camilla Brandt (Group CRM Director), Johan Bergström (Lumi Club Manager, SE),
+Signe Lund (Group Legal, Privacy), Mikael Nieminen (Group Finance), Pekka Laine (Group Digital
+& App), Trine Vestergaard (Aurora Plus Manager, DK), facilitator
+Notes taken by: facilitator
+
+---
+
+Facilitator: Goal for today is to agree the backbone of a single loyalty programme. We have
+two today: Aurora Plus in Denmark, about 1.9 million members, and Lumi Club in Sweden, Norway
+and Finland, about 1.4 million. Camilla, over to you.
+
+Camilla: Thanks. The two programmes work quite differently. Aurora Plus gives points that turn
+into vouchers. Lumi Club has tiers, Silver, Gold and Platinum, with tier benefits but fewer
+points. Customers who shop in both countries, and there are more of them than we thought, have
+two memberships and two apps. The ambition is one programme, one app, one points currency.
+
+Johan: Lumi Club members really value the tiers. If we take Platinum away, we will hear about
+it on social media within the hour.
+
+Trine: And Aurora Plus members don't understand tiers at all, they want vouchers.
+
+Camilla: So the question is whether we can have both.
+
+Johan: We could have points that become vouchers, plus tiers on top.
+
+Trine: Three tiers, not four. Simpler.
+
+Camilla: Let me propose: one points currency across all four markets, points convert to
+vouchers, and three tiers on top. Can we agree that as the backbone?
+
+Johan: Yes, if the tier benefits are good enough.
+
+Trine: Yes.
+
+Camilla: Agreed then. One points currency, vouchers, three tiers.
+
+Facilitator: Next is the brand. Do customers see one name?
+
+Camilla: My proposal: for now, the programme keeps the banner names in front of customers.
+Aurora Plus in Denmark, Lumi Club in the other three. One programme behind the scenes. We revisit
+the name when we've decided the banner strategy.
+
+Johan: Good, that protects us in the short term.
+
+(general agreement)
+
+Facilitator: Next, migration. How do existing members move?
+
+Pekka: The simplest technically is automatic migration. Everyone moves over on a set date.
+
+Signe: I need to stop us there. Automatic migration might need fresh consent, depending on how
+the original consents were worded. The Lumi Club consents from before 2022 are quite narrow. I
+can't say today whether auto-migration is OK.
+
+Camilla: What would you need?
+
+Signe: I need to review both consent texts and the privacy notices, and probably get an external
+opinion for Sweden. End of November at the earliest.
+
+Camilla: OK. Then migration approach stays open until Signe has advised. Can you own that?
+
+Signe: Yes, legal opinion by the 30th of November.
+
+Facilitator: Points conversion. How many Lumi points equal one Aurora point?
+
+Mikael: This is where I need to be careful. Whatever rate we choose changes the points liability
+on the balance sheet. If we're generous, we're basically writing a cheque. If we're stingy,
+members feel robbed. I need to model it before anyone promises a rate.
+
+Johan: Members will compare. If someone had 3,000 Lumi points and now has 1,200 of something
+else, they'll think we took their points.
+
+Camilla: Mikael, can you model three conversion options?
+
+Mikael: Yes, for the next session.
+
+Johan: And we'll lose members if we get this wrong. In 2021 when we changed the Gold threshold
+we lost about 4 percent of active Gold members in two months.
+
+Camilla: Good data point. Let's note that.
+
+Johan: Can I raise a Swedish thing? The birthday bonus. Swedish members get double points in
+their birthday month. It's the single most used benefit in Lumi Club. If we take it away in
+Sweden, that's a problem.
+
+Trine: Denmark doesn't have it, and it's expensive.
+
+Camilla: Could it be a local add-on, just in Sweden?
+
+Mikael: Technically yes, but every local add-on makes the programme harder to run.
+
+Camilla: Let's not decide that now. Johan, can you pull the usage data on the birthday bonus?
+
+Johan: Sure.
+
+Pekka: Before any of this launches, the app needs to change. Today Lumi Club runs on a different
+CRM platform. The one-app vision depends on the CRM consolidation, which is planned for Q2 next
+year. We cannot launch a single programme in the app before that.
+
+Camilla: So realistically launch is after Q2.
+
+Pekka: At the earliest. And my team is already full until February.
+
+Camilla: Understood. We also need a customer communication plan. People will notice.
+
+Trine: Definitely. And store staff need to be able to explain it.
+
+Camilla: Let's find someone to own comms. Probably marketing, I'll ask around.
+
+Facilitator: Thank you all. I'll send the notes.
+
+[End of notes]

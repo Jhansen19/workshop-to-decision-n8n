@@ -1,0 +1,9 @@
+transcript_id,model,run,memo_file,accuracy,clarity,actionability,concision,notes
+01,gemini,1,eval\outputs\gemini\01_run1_memo.md,4,5,4,5,Decisions listed separately; pilot kept open; misses Mette's steering-committee action
+01,groq,1,eval\outputs\groq\01_run1_memo.md,3,3,4,2,Recommends Finland (opinion not in notes); calls workshop 'the Steering Committee'; header broken; 593 words
+02,gemini,1,eval\outputs\gemini\02_run1_memo.md,4,5,4,5,80/20 split and range forum right; pricing left for sign-off; misses supplier-communication question
+02,groq,1,eval\outputs\groq\02_run1_memo.md,2,3,3,1,"8 'decisions', mostly tasks and dates; invents open questions; says no sign-off needed; 728 words"
+03,gemini,1,eval\outputs\gemini\03_run1_memo.md,4,5,3,5,Correct decisions and open questions; calls workshop 'the steering committee'; customer-communication task missing
+03,groq,1,eval\outputs\groq\03_run1_memo.md,1,1,1,1,Run failed (free-tier limit) - no memo
+04,gemini,1,eval\outputs\gemini\04_run1_memo.md,4,5,4,5,"Passes half-decision trap (measure agreed, which one open); good English memo from Danish notes"
+04,groq,1,eval\outputs\groq\04_run1_memo.md,1,1,1,1,Run failed (free-tier limit) - no memo

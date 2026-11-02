@@ -1,0 +1,171 @@
+{
+  "transcript_id": "01",
+  "model": "groq",
+  "run": 1,
+  "latency_s": 12.86,
+  "error": null,
+  "extraction": {
+    "workshop_summary": "The workshop aligned on a Group-wide daily auto‑replenishment model with a Norway lead‑time override, centrally calculated safety stock without manual buffers, and assigned ownership for item master cleanup. Open issues remain around pilot market selection, identification of business resources for data cleanup, DC capacity estimation, and training plan ownership.",
+    "decisions": [
+      {
+        "decision": "Adopt a single Group replenishment model using daily auto‑replenishment, with Norway using a lead‑time parameter override.",
+        "rationale": "Unify processes across markets, improve availability, while respecting Norway's longer supplier lead times.",
+        "scope": "Group with local variant",
+        "decision_owner": "Mette",
+        "requires_signoff": false
+      },
+      {
+        "decision": "Set safety stock centrally per category and prohibit manual buffers, to be reviewed after the pilot.",
+        "rationale": "Reduce working capital and ensure consistent service‑level targets across markets.",
+        "scope": "Group",
+        "decision_owner": "Mette",
+        "requires_signoff": false
+      },
+      {
+        "decision": "Assign Anna as owner of the item master cleanup.",
+        "rationale": "Clean duplicate SKUs, units of measure and supplier codes before the new model can be applied.",
+        "scope": "Group",
+        "decision_owner": "Mette",
+        "requires_signoff": false
+      }
+    ],
+    "open_issues": [
+      {
+        "issue": "Select pilot market (Sweden vs Finland).",
+        "options_discussed": [
+          "Pilot in Finland – smaller, safer, limited to 12 stores.",
+          "Pilot in Sweden – larger volume, tests Jönköping DC capacity."
+        ],
+        "escalate_to": "Steering Committee"
+      },
+      {
+        "issue": "Identify two business representatives to support item master cleanup.",
+        "options_discussed": [
+          "Ask Lars to source contacts.",
+          "Ask Sofia to source contacts."
+        ],
+        "escalate_to": "Mette"
+      },
+      {
+        "issue": "Determine Jönköping DC resource requirement for daily auto‑replenishment.",
+        "options_discussed": [
+          "Hire additional pickers for the morning shift.",
+          "Change wave planning to handle increased frequency."
+        ],
+        "escalate_to": "Sofia"
+      },
+      {
+        "issue": "Assign ownership for Norway training material and plan.",
+        "options_discussed": [
+          "Group training team.",
+          "Local operations team.",
+          "External vendor."
+        ],
+        "escalate_to": "Mette"
+      }
+    ],
+    "actions": [
+      {
+        "action": "Clean up item master (remove duplicate SKUs, align units of measure and supplier codes).",
+        "owner": "Anna",
+        "due_date": null,
+        "priority": "High",
+        "linked_decision": "Assign Anna as owner of the item master cleanup."
+      },
+      {
+        "action": "Prepare rough business case for Sweden and Finland pilot options.",
+        "owner": "Thomas",
+        "due_date": "2026-10-30",
+        "priority": "High",
+        "linked_decision": "Select pilot market (open issue)."
+      },
+      {
+        "action": "Estimate resource requirement (pickers or wave planning) for Jönköping DC to support daily auto‑replenishment.",
+        "owner": "Sofia",
+        "due_date": "2026-11-15",
+        "priority": "Medium",
+        "linked_decision": "Adopt a single Group replenishment model using daily auto‑replenishment."
+      },
+      {
+        "action": "Identify two business representatives to assist item master cleanup.",
+        "owner": "Lars",
+        "due_date": null,
+        "priority": "Medium",
+        "linked_decision": "Assign Anna as owner of the item master cleanup."
+      },
+      {
+        "action": "Develop training plan and material for Norway auto‑replenishment, including translation.",
+        "owner": "UNASSIGNED",
+        "due_date": null,
+        "priority": "Medium",
+        "linked_decision": "Adopt a single Group replenishment model with Norway lead‑time override."
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Item master cleanup may exceed eight weeks, delaying the overall timeline.",
+        "impact": "High",
+        "likelihood": "Medium",
+        "mitigation": "Communicate early to steering committee, allocate extra resources, monitor progress weekly.",
+        "owner": "Anna",
+        "source": "stated"
+      },
+      {
+        "risk": "Norway lead‑time override could cause stockouts if not calibrated correctly.",
+        "impact": "Medium",
+        "likelihood": "Medium",
+        "mitigation": "Monitor stock levels during pilot, adjust parameters within agreed limits, set safety thresholds.",
+        "owner": "Mette",
+        "source": "inferred"
+      },
+      {
+        "risk": "Jönköping DC may lack capacity for daily orders, creating bottlenecks.",
+        "impact": "High",
+        "likelihood": "Medium",
+        "mitigation": "Add pickers or redesign wave planning, secure budget for required resources.",
+        "owner": "Sofia",
+        "source": "inferred"
+      },
+      {
+        "risk": "Stores may resist removal of manual safety stock buffers, leading to non‑compliance.",
+        "impact": "Medium",
+        "likelihood": "Medium",
+        "mitigation": "Communicate benefits, provide training, allow temporary buffer during transition.",
+        "owner": "Thomas",
+        "source": "inferred"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependent": "Pilot launch",
+        "depends_on": "Item master cleanup completion",
+        "owner": "Mette"
+      },
+      {
+        "dependent": "Steering committee decision on pilot market",
+        "depends_on": "Business case preparation for Sweden and Finland",
+        "owner": "Thomas"
+      },
+      {
+        "dependent": "Sweden pilot planning",
+        "depends_on": "Jönköping DC resource estimate",
+        "owner": "Sofia"
+      },
+      {
+        "dependent": "Norway rollout",
+        "depends_on": "Training material creation",
+        "owner": "UNASSIGNED"
+      }
+    ],
+    "governance_flags": [
+      "1 action(s) have no owner",
+      "4 open issue(s) need escalation"
+    ],
+    "model_used": "groq",
+    "run_id": "eval-1793259932203",
+    "workshop": "Evaluation run",
+    "workshop_date": "",
+    "markets": ""
+  },
+  "memo": "# Evaluation run: Decision Memo  \n**Date | Markets | Run ID**  \n|  |  | eval-1793259932203 |\n\n## Bottom line  \nThe Steering Committee approved a Group‑wide daily auto‑replenishment model with a Norway lead‑time override, centrally calculated safety stock without manual buffers, and Anna as owner of the item‑master cleanup. Sign‑off is required on the pilot‑market selection (Sweden vs Finland) and on the ownership of the Norway training plan. The greatest risk is that the item‑master cleanup may exceed eight weeks, jeopardising the pilot timeline.\n\n## Decisions made  \n\n| Decision | Scope | Owner |\n|---|---|---|\n| Adopt a single Group replenishment model using daily auto‑replenishment, with Norway using a lead‑time parameter override. | Group with local variant | Mette |\n| Set safety stock centrally per category and prohibit manual buffers, to be reviewed after the pilot. | Group | Mette |\n| Assign Anna as owner of the item master cleanup. | Group | Mette |\n\n## Decisions requiring your sign‑off  \n\n1. **Pilot market selection** – recommend proceeding with the Finland pilot (smaller, safer, limited to 12 stores) to reduce exposure while the model is validated.  \n2. **Norway training plan ownership** – recommend assigning the Group training team to develop and own the material, ensuring consistent messaging and translation support.\n\n## Open issues for escalation  \n\n| Issue | Options discussed | Recommended next step |\n|---|---|---|\n| Select pilot market (Sweden vs Finland). | • Finland – smaller, safer, 12 stores.<br>• Sweden – larger volume, tests Jönköping DC capacity. | Approve Finland pilot and task Thomas with final business‑case sign‑off. |\n| Identify two business representatives to support item master cleanup. | • Ask Lars to source contacts.<br>• Ask Sofia to source contacts. | Escalate to Mette to decide between Lars and Sofia; assign contacts promptly. |\n| Determine Jönköping DC resource requirement for daily auto‑replenishment. | • Hire additional pickers for the morning shift.<br>• Change wave planning to handle increased frequency. | Escalate to Sofia to produce a cost‑benefit analysis of the two options by 15 Nov. |\n| Assign ownership for Norway training material and plan. | • Group training team.<br>• Local operations team.<br>• External vendor. | Escalate to Mette to appoint the Group training team and define scope. |\n\n## Key risks & dependencies  \n\n| Risk | Impact | Likelihood | Mitigation |\n|---|---|---|---|\n| Item master cleanup may exceed eight weeks, delaying the overall timeline. | High | Medium | Communicate early to steering committee, allocate extra resources, monitor progress weekly (Owner: Anna). |\n| Jönköping DC may lack capacity for daily orders, creating bottlenecks. | High | Medium | Add pickers or redesign wave planning; secure budget for required resources (Owner: Sofia). |\n| Norway lead‑time override could cause stockouts if not calibrated correctly. | Medium | Medium | Monitor stock levels during pilot, adjust parameters within agreed limits, set safety thresholds (Owner: Mette). |\n\n## Next steps  \n\n| Action | Owner | Due |\n|---|---|---|\n| Clean up item master (remove duplicate SKUs, align units of measure and supplier codes). | Anna | – |\n| Prepare rough business case for Sweden and Finland pilot options. | Thomas | 2026‑10‑30 |\n| Estimate resource requirement (pickers or wave planning) for Jönköping DC to support daily auto‑replenishment. | Sofia | 2026‑11‑15 |\n| Identify two business representatives to assist item master cleanup. | Lars | – |\n| Develop training plan and material for Norway auto‑replenishment, including translation. | UNASSIGNED | – |\n\n## Governance flags  \n- 1 action has no owner.  \n- 4 open issues need escalation."
+}

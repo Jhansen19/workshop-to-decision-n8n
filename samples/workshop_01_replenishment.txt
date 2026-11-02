@@ -1,0 +1,120 @@
+Workshop: Nordic Replenishment Harmonisation – Session 2
+Company: Aurora Beauty Group (fictional) – banners Aurora (DK) and Lumi (SE/NO/FI)
+Date: 14 October 2026, 09:00–11:30, Copenhagen hub + Teams
+Attendees: Mette Kjær (Group Supply Chain Director), Lars Holm (DK Store Operations),
+Sofia Lindqvist (SE Operations), Erik Nygaard (NO Operations), Jukka Salonen (FI Operations),
+Anna Berg (Group IT, ERP), Thomas Riis (Group Finance), facilitator
+Notes taken by: facilitator (raw, lightly cleaned)
+
+---
+
+Facilitator: Welcome back. Last session we agreed in principle that we want one replenishment
+model across the four markets. Today the aim is to land the parameters and the pilot. Mette,
+do you want to frame it?
+
+Mette: Yes. Right now Aurora stores in Denmark run daily auto-replenishment from the Brøndby DC,
+and the Lumi stores in Sweden, Norway and Finland are on manual orders, twice a week mostly.
+Two processes, two ERPs, two sets of KPIs. The ambition is one Group model. Sofia, Lumi-side
+stores currently order twice a week?
+
+Sofia: Twice, sometimes three times in peak. Store managers spend about two hours a week on it.
+If we go to the DK model of daily auto-replenishment, the stores will love it, but our DC in
+Jönköping can't pick that profile yet. It's built for bigger, less frequent orders.
+
+Lars: For what it's worth, when we moved Denmark to daily, store availability went up about two
+points in the first quarter. But it took us six months to get the forecasts stable.
+
+Erik: Norway is different anyway. Supplier lead times for some brands are four days longer
+because of customs. If you put us on the same parameters we'll be out of stock every Monday.
+I'd want a local exception.
+
+Jukka: Finland is closer to Sweden. We could live with the Swedish setup.
+
+Thomas: From a finance side, the question for me is inventory. Daily replenishment should take
+working capital out, but only if the safety stock settings are right. If everyone keeps their
+own safety stock buffers "just in case", we end up with more stock, not less.
+
+Mette: Fair. OK, let's try to agree the principle. One Group model, daily auto-replenishment,
+and Norway gets a lead-time parameter override, not a separate process. Same model, different
+parameter. Everyone OK with that?
+
+Erik: As long as the override is mine to set, yes.
+
+Mette: Within limits we agree at Group, yes. OK, agreed.
+
+Facilitator: So that's decision one. Second: safety stock. Thomas, are you proposing a Group
+rule?
+
+Thomas: I'd propose safety stock is calculated centrally by Group Supply Chain, using the same
+service-level targets per category, and markets can't add manual buffers.
+
+Sofia: I'm not sure the stores will accept that on day one.
+
+Mette: I think it's right. Let's agree it: safety stock is set centrally per category, no
+manual buffers. We review it after the pilot. Agreed?
+
+(general agreement)
+
+Anna: Just flagging, none of this works until the item master is cleaned. We have duplicate
+SKUs between the two ERPs, different units of measure for the same product, and some
+supplier codes that don't match at all. That's maybe eight weeks of work.
+
+Lars: So someone owns the data cleanup?
+
+Anna: I can own it, but I need two people from the business who actually know the ranges.
+I can't do it with IT alone.
+
+Mette: OK, Anna owns the item master cleanup. We need to find the two business people. Lars,
+Sofia, can you think about who?
+
+Lars: I'll ask around.
+
+Facilitator: Should we put a name against finding those two people?
+
+Mette: Let's come back to it, we don't need to solve it in the room.
+
+Facilitator: OK. Next: the pilot.
+
+Mette: Pilot. Do we pilot in Sweden or Finland first? Jukka?
+
+Jukka: Finland is smaller, safer. Twelve stores, one region. If it goes wrong it's contained.
+
+Sofia: But Sweden is where the volume is, we learn more. And the Jönköping DC is the
+bottleneck anyway, so piloting without it doesn't tell us much.
+
+Thomas: Finance would prefer the one with the clearer business case. I haven't seen numbers for
+either.
+
+Mette: Let's not decide today. I'll take it to the steering committee on the 4th of November
+with both options. Thomas, can you get me a rough business case for both by then?
+
+Thomas: Rough, yes. By the 30th.
+
+Sofia: One more thing on the DC. If we go daily in Sweden, Jönköping needs either more pickers
+on the morning shift or a change in the wave planning. I don't have budget for more pickers
+this year.
+
+Mette: Noted. Can you work out what it would take? Even a rough estimate.
+
+Sofia: I can do that, but not before mid-November, we're in the middle of Black Friday prep.
+
+Mette: Mid-November is fine.
+
+Erik: Also, the store managers in Norway will need training. They've never used auto-
+replenishment. Somebody needs to own the training material, ideally once for the whole Group,
+translated.
+
+Mette: Good point. We'll need a training plan. Let's park the owner for that for now.
+
+Facilitator: Before we close, let me read back what I have. Decisions: one Group model with
+daily auto-replenishment; Norway lead-time override as a parameter; safety stock set centrally
+per category with no manual buffers, reviewed after the pilot. Open: pilot market, which goes to
+the steering committee. Actions: Anna owns the item master cleanup; Thomas does business cases
+for Sweden and Finland by 30 October. Did I miss anything?
+
+Lars: One thing you didn't say. If the cleanup takes longer than eight weeks, the whole timeline
+moves. We should be honest about that with the steering committee.
+
+Mette: Agreed. Let's flag it. Thanks everyone.
+
+[End of notes]

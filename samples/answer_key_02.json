@@ -1,0 +1,28 @@
+{
+  "workshop_summary": "Decision rights for Group vs. local assortment: core and local range, new listings and pricing.",
+  "decisions": [
+    { "decision": "Group Category Management decides the core range and markets decide a local range of up to 20% of SKUs per category, reviewed after six months", "scope": "Group with local variant" },
+    { "decision": "New brands listed in more than one market go through the monthly Group range forum; single-market listings stay local", "scope": "Group with local variant" }
+  ],
+  "open_issues": [
+    { "issue": "Who sets prices on the local range: Group Pricing or the markets", "escalate_to": "Next session (4 November)" },
+    { "issue": "Who tells key suppliers about the centralisation", "escalate_to": "UNASSIGNED" }
+  ],
+  "actions": [
+    { "action": "Develop two options for pricing rights on the local range", "owner": "Henrik and Maja", "due_date": "4 November" },
+    { "action": "Lead the technical work on a shared category tree", "owner": "Rasmus", "due_date": null },
+    { "action": "Get the category managers together to agree the category tree", "owner": "Karin", "due_date": null },
+    { "action": "Draft key messages for briefing the buyers", "owner": "Ole", "due_date": null },
+    { "action": "Write the RACI for listing to delisting", "owner": "Karin", "due_date": "13 November" },
+    { "action": "Decide who informs key suppliers and when", "owner": "UNASSIGNED", "due_date": null }
+  ],
+  "risks": [
+    { "risk": "Suppliers lock in better terms with individual markets before the range forum is in place", "source": "stated" },
+    { "risk": "Buyers fear becoming order-takers and disengage", "source": "inferred" },
+    { "risk": "Norwegian local brands get delisted and Norway loses customers", "source": "stated" }
+  ],
+  "dependencies": [
+    { "dependent": "New assortment decision rights going live", "depends_on": "Shared category tree and one product data source", "owner": "Rasmus" },
+    { "dependent": "Shared category tree", "depends_on": "Category managers agreeing the tree", "owner": "Karin" }
+  ]
+}

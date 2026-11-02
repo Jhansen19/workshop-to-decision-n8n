@@ -1,0 +1,31 @@
+{
+  "workshop_summary": "Session 2 on harmonising replenishment across DK, SE, NO and FI: model, safety stock and pilot.",
+  "decisions": [
+    { "decision": "Adopt one Group replenishment model with daily auto-replenishment", "scope": "Group" },
+    { "decision": "Norway gets a lead-time parameter override instead of a separate process", "scope": "Group with local variant" },
+    { "decision": "Safety stock is set centrally per category with no manual buffers, reviewed after the pilot", "scope": "Group" }
+  ],
+  "open_issues": [
+    { "issue": "Choose the pilot market: Sweden or Finland", "escalate_to": "Steering committee (4 November)" }
+  ],
+  "actions": [
+    { "action": "Own the item master data cleanup across both ERPs", "owner": "Anna", "due_date": null },
+    { "action": "Find two business people to support the data cleanup", "owner": "UNASSIGNED", "due_date": null },
+    { "action": "Prepare rough business cases for a Sweden and a Finland pilot", "owner": "Thomas", "due_date": "30 October" },
+    { "action": "Take the pilot market decision to the steering committee", "owner": "Mette", "due_date": "4 November" },
+    { "action": "Estimate the DC impact of daily picking in Jönköping", "owner": "Sofia", "due_date": "mid-November" },
+    { "action": "Create a training plan for store managers on auto-replenishment", "owner": "UNASSIGNED", "due_date": null },
+    { "action": "Flag the data cleanup timeline risk to the steering committee", "owner": "Mette", "due_date": null }
+  ],
+  "risks": [
+    { "risk": "The Jönköping DC cannot pick a daily order profile and there is no budget for extra pickers", "source": "stated" },
+    { "risk": "The item master cleanup takes longer than 8 weeks and delays the whole timeline", "source": "stated" },
+    { "risk": "Markets keep their own safety stock buffers so inventory rises instead of falling", "source": "inferred" },
+    { "risk": "Stores do not accept centrally set safety stock", "source": "inferred" }
+  ],
+  "dependencies": [
+    { "dependent": "Harmonised replenishment", "depends_on": "Item master cleanup", "owner": "Anna" },
+    { "dependent": "Daily replenishment in Sweden", "depends_on": "Jönköping DC picking capacity or wave planning change", "owner": "Sofia" },
+    { "dependent": "Pilot market decision", "depends_on": "Business cases for Sweden and Finland", "owner": "Thomas" }
+  ]
+}

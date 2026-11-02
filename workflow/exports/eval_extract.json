@@ -1,0 +1,162 @@
+{
+  "id": "EvalExtractWf001",
+  "name": "Eval – Extract",
+  "nodes": [
+    {
+      "id": "3f197d0c-d806-423f-a578-265383d5e44f",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "eval-extract",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "7d1c2a4e-5b3f-4e8a-9c61-0f2d8b7a3e03"
+    },
+    {
+      "id": "6bec9dcd-ffd5-42e0-af28-da63874d357e",
+      "name": "Call Extract & Memo",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "ExtractMemoWf001",
+          "mode": "list",
+          "cachedResultName": "Extract & Memo"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "transcript": "={{ $json.body.transcript }}",
+            "model": "={{ $json.body.model }}",
+            "workshop_title": "Evaluation run",
+            "workshop_date": "",
+            "markets": "",
+            "run_id": "=eval-{{ $now.toMillis() }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "transcript",
+              "displayName": "transcript",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "model",
+              "displayName": "model",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "workshop_title",
+              "displayName": "workshop_title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "workshop_date",
+              "displayName": "workshop_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "markets",
+              "displayName": "markets",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "run_id",
+              "displayName": "run_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "98df2f1a-76d6-4f59-91e2-2cff1229ef15",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        0
+      ],
+      "parameters": {
+        "respondWith": "firstIncomingItem",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Call Extract & Memo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Extract & Memo": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "errorWorkflow": "ErrorHandlerWf01"
+  },
+  "active": false
+}

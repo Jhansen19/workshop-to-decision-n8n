@@ -1,0 +1,137 @@
+model,transcript_id,run,category,type,answer_key,model_output,similarity,result
+gemini,01,1,decisions,expected,Adopt one Group replenishment model with daily auto-replenishment,Adopt a single Group replenishment model based on daily auto-replenishment.,87.1,matched
+gemini,01,1,decisions,expected,Norway gets a lead-time parameter override instead of a separate process,Norway will utilize a lead-time parameter override within the Group model.,64.7,matched
+gemini,01,1,decisions,expected,"Safety stock is set centrally per category with no manual buffers, reviewed after the pilot","Safety stock is to be calculated centrally by Group Supply Chain per category, with no manual buffers allowed.",68.7,matched
+gemini,01,1,open_issues,expected,Choose the pilot market: Sweden or Finland,Selection of pilot market (Sweden vs. Finland).,69.7,matched
+gemini,01,1,open_issues,extra,,Identification of two business representatives to support item master data cleanup.,,EXTRA (not in answer key)
+gemini,01,1,open_issues,extra,,Ownership of the Group training plan and materials.,,EXTRA (not in answer key)
+gemini,01,1,actions,expected,Own the item master data cleanup across both ERPs,Execute item master data cleanup.,65.9,matched
+gemini,01,1,actions,expected,Find two business people to support the data cleanup,,,MISSED
+gemini,01,1,actions,expected,Prepare rough business cases for a Sweden and a Finland pilot,Develop business cases for Sweden and Finland pilot options.,78.5,matched
+gemini,01,1,actions,expected,Take the pilot market decision to the steering committee,,,MISSED
+gemini,01,1,actions,expected,Estimate the DC impact of daily picking in Jönköping,Estimate resource/budget requirements for Jönköping DC to support daily replenishment.,60.3,matched
+gemini,01,1,actions,expected,Create a training plan for store managers on auto-replenishment,,,MISSED
+gemini,01,1,actions,expected,Flag the data cleanup timeline risk to the steering committee,,,MISSED
+gemini,01,1,risks,expected,The Jönköping DC cannot pick a daily order profile and there is no budget for extra pickers,,,MISSED
+gemini,01,1,risks,expected,The item master cleanup takes longer than 8 weeks and delays the whole timeline,Item master data quality issues delaying the overall project timeline.,55.8,matched
+gemini,01,1,risks,expected,Markets keep their own safety stock buffers so inventory rises instead of falling,Inconsistent safety stock settings leading to increased inventory levels.,55.8,matched
+gemini,01,1,risks,expected,Stores do not accept centrally set safety stock,,,MISSED
+gemini,01,1,risks,extra,,Jönköping DC capacity constraints preventing daily replenishment in Sweden.,,EXTRA (not in answer key)
+gemini,01,1,dependencies,expected,Harmonised replenishment depends on Item master cleanup,Implementation of daily auto-replenishment depends on Item master data cleanup,61.6,matched
+gemini,01,1,dependencies,expected,Daily replenishment in Sweden depends on Jönköping DC picking capacity or wave planning change,,,MISSED
+gemini,01,1,dependencies,expected,Pilot market decision depends on Business cases for Sweden and Finland,Pilot launch depends on Steering committee approval of pilot market,58.3,matched
+groq,01,1,decisions,expected,Adopt one Group replenishment model with daily auto-replenishment,"Adopt a single Group replenishment model using daily auto‑replenishment, with Norway using a lead‑time parameter override.",72.9,matched
+groq,01,1,decisions,expected,Norway gets a lead-time parameter override instead of a separate process,,,MISSED
+groq,01,1,decisions,expected,"Safety stock is set centrally per category with no manual buffers, reviewed after the pilot","Set safety stock centrally per category and prohibit manual buffers, to be reviewed after the pilot.",87.8,matched
+groq,01,1,decisions,extra,,Assign Anna as owner of the item master cleanup.,,EXTRA (not in answer key)
+groq,01,1,open_issues,expected,Choose the pilot market: Sweden or Finland,Select pilot market (Sweden vs Finland).,68.3,matched
+groq,01,1,open_issues,extra,,Identify two business representatives to support item master cleanup.,,EXTRA (not in answer key)
+groq,01,1,open_issues,extra,,Determine Jönköping DC resource requirement for daily auto‑replenishment.,,EXTRA (not in answer key)
+groq,01,1,open_issues,extra,,Assign ownership for Norway training material and plan.,,EXTRA (not in answer key)
+groq,01,1,actions,expected,Own the item master data cleanup across both ERPs,,,MISSED
+groq,01,1,actions,expected,Find two business people to support the data cleanup,Identify two business representatives to assist item master cleanup.,60.0,matched
+groq,01,1,actions,expected,Prepare rough business cases for a Sweden and a Finland pilot,Prepare rough business case for Sweden and Finland pilot options.,90.8,matched
+groq,01,1,actions,expected,Take the pilot market decision to the steering committee,,,MISSED
+groq,01,1,actions,expected,Estimate the DC impact of daily picking in Jönköping,Estimate resource requirement (pickers or wave planning) for Jönköping DC to support daily auto‑replenishment.,57.6,matched
+groq,01,1,actions,expected,Create a training plan for store managers on auto-replenishment,"Develop training plan and material for Norway auto‑replenishment, including translation.",65.6,matched
+groq,01,1,actions,expected,Flag the data cleanup timeline risk to the steering committee,,,MISSED
+groq,01,1,actions,extra,,"Clean up item master (remove duplicate SKUs, align units of measure and supplier codes).",,EXTRA (not in answer key)
+groq,01,1,risks,expected,The Jönköping DC cannot pick a daily order profile and there is no budget for extra pickers,,,MISSED
+groq,01,1,risks,expected,The item master cleanup takes longer than 8 weeks and delays the whole timeline,"Item master cleanup may exceed eight weeks, delaying the overall timeline.",66.3,matched
+groq,01,1,risks,expected,Markets keep their own safety stock buffers so inventory rises instead of falling,"Stores may resist removal of manual safety stock buffers, leading to non‑compliance.",58.2,matched
+groq,01,1,risks,expected,Stores do not accept centrally set safety stock,,,MISSED
+groq,01,1,risks,extra,,Norway lead‑time override could cause stockouts if not calibrated correctly.,,EXTRA (not in answer key)
+groq,01,1,risks,extra,,"Jönköping DC may lack capacity for daily orders, creating bottlenecks.",,EXTRA (not in answer key)
+groq,01,1,dependencies,expected,Harmonised replenishment depends on Item master cleanup,Pilot launch depends on Item master cleanup completion,67.0,matched
+groq,01,1,dependencies,expected,Daily replenishment in Sweden depends on Jönköping DC picking capacity or wave planning change,Sweden pilot planning depends on Jönköping DC resource estimate,69.4,matched
+groq,01,1,dependencies,expected,Pilot market decision depends on Business cases for Sweden and Finland,Steering committee decision on pilot market depends on Business case preparation for Sweden and Finland,87.6,matched
+groq,01,1,dependencies,extra,,Norway rollout depends on Training material creation,,EXTRA (not in answer key)
+gemini,02,1,decisions,expected,"Group Category Management decides the core range and markets decide a local range of up to 20% of SKUs per category, reviewed after six months",Core range (80% of SKUs) is decided by Group Category Management; local range (up to 20% of SKUs) is decided by the market commercial lead.,70.2,matched
+gemini,02,1,decisions,expected,New brands listed in more than one market go through the monthly Group range forum; single-market listings stay local,New brands listed in more than one market must be approved by the Group range forum.,71.8,matched
+gemini,02,1,decisions,extra,,The 20% local range share will be reviewed after six months.,,EXTRA (not in answer key)
+gemini,02,1,open_issues,expected,Who sets prices on the local range: Group Pricing or the markets,Pricing authority and guardrails for the local range.,56.6,matched
+gemini,02,1,open_issues,expected,Who tells key suppliers about the centralisation,,,MISSED
+gemini,02,1,actions,expected,Develop two options for pricing rights on the local range,Develop two options for local range pricing/margin management.,77.3,matched
+gemini,02,1,actions,expected,Lead the technical work on a shared category tree,Lead the technical development of a shared category tree.,82.9,matched
+gemini,02,1,actions,expected,Get the category managers together to agree the category tree,Convene category managers to agree on the shared category tree structure.,79.5,matched
+gemini,02,1,actions,expected,Draft key messages for briefing the buyers,Draft key messages for internal communication regarding the new operating model.,62.8,matched
+gemini,02,1,actions,expected,Write the RACI for listing to delisting,Draft the RACI matrix for assortment management (listing to delisting).,59.1,matched
+gemini,02,1,actions,expected,Decide who informs key suppliers and when,,,MISSED
+gemini,02,1,risks,expected,Suppliers lock in better terms with individual markets before the range forum is in place,Suppliers may attempt to lock in favorable terms with individual markets before the Group range forum is fully operational.,83.6,matched
+gemini,02,1,risks,expected,Buyers fear becoming order-takers and disengage,,,MISSED
+gemini,02,1,risks,expected,Norwegian local brands get delisted and Norway loses customers,,,MISSED
+gemini,02,1,risks,extra,,Internal resistance and anxiety among local buyers regarding job security and loss of autonomy.,,EXTRA (not in answer key)
+gemini,02,1,risks,extra,,Inability to execute the new decision rights due to fragmented PIM systems and data silos.,,EXTRA (not in answer key)
+gemini,02,1,dependencies,expected,New assortment decision rights going live depends on Shared category tree and one product data source,Implementation of new decision rights depends on Unified category tree and shared reporting view,70.6,matched
+gemini,02,1,dependencies,expected,Shared category tree depends on Category managers agreeing the tree,Agreement on category tree depends on Category managers meeting,79.8,matched
+groq,02,1,decisions,expected,"Group Category Management decides the core range and markets decide a local range of up to 20% of SKUs per category, reviewed after six months",Group Category Management owns the core range (≈80% of SKUs) and each market commercial lead owns a local range up to 20% of SKUs per category.,77.6,matched
+groq,02,1,decisions,expected,New brands listed in more than one market go through the monthly Group range forum; single-market listings stay local,New brands listed in more than one market must be approved by the Group range forum; single‑market listings stay within the local range.,82.1,matched
+groq,02,1,decisions,extra,,The local range share will be reviewed after six months.,,EXTRA (not in answer key)
+groq,02,1,decisions,extra,,"The Group range forum will consist of Karin, the four market commercial leads, and Henrik (Pricing) and will meet monthly.",,EXTRA (not in answer key)
+groq,02,1,decisions,extra,,Next workshop session scheduled for 4 November 2026.,,EXTRA (not in answer key)
+groq,02,1,decisions,extra,,Rasmus Juul will lead the technical work to create a shared category tree; Karin will convene category managers to agree the tree.,,EXTRA (not in answer key)
+groq,02,1,decisions,extra,,Ole Madsen will draft the key briefing messages for buyers about the new decision rights.,,EXTRA (not in answer key)
+groq,02,1,decisions,extra,,Karin Ekström will own the RACI for the end‑to‑end process (listing to delisting) and will deliver a draft by 13 November 2026.,,EXTRA (not in answer key)
+groq,02,1,open_issues,expected,Who sets prices on the local range: Group Pricing or the markets,Pricing methodology for the local range (full group pricing vs. margin floor vs. other).,60.4,matched
+groq,02,1,open_issues,expected,Who tells key suppliers about the centralisation,Who will communicate the centralisation plan to key suppliers.,73.6,matched
+groq,02,1,open_issues,extra,,"Appropriate percentage of local SKU range for each market (e.g., Norway may need more than 20%).",,EXTRA (not in answer key)
+groq,02,1,open_issues,extra,,Full integration of the two PIM systems (timeline and scope).,,EXTRA (not in answer key)
+groq,02,1,open_issues,extra,,Deadline for Ole Madsen to deliver the buyer briefing draft.,,EXTRA (not in answer key)
+groq,02,1,actions,expected,Develop two options for pricing rights on the local range,Develop two pricing options (full group pricing vs. margin floor) for the local range and present them at the next session.,74.6,matched
+groq,02,1,actions,expected,Lead the technical work on a shared category tree,Lead technical work to create a shared category tree.,87.3,matched
+groq,02,1,actions,expected,Get the category managers together to agree the category tree,Convene category managers to agree on the shared category tree.,79.7,matched
+groq,02,1,actions,expected,Draft key messages for briefing the buyers,Draft key briefing messages for buyers about the new decision rights.,87.8,matched
+groq,02,1,actions,expected,Write the RACI for listing to delisting,Draft the RACI for the listing‑to‑delisting process.,66.4,matched
+groq,02,1,actions,expected,Decide who informs key suppliers and when,,,MISSED
+groq,02,1,actions,extra,,Collaborate with Maja Persson on the pricing options for the local range.,,EXTRA (not in answer key)
+groq,02,1,actions,extra,,Set up a shared reporting view of product data across markets.,,EXTRA (not in answer key)
+groq,02,1,risks,expected,Suppliers lock in better terms with individual markets before the range forum is in place,Suppliers may try to lock in better terms with individual markets before the Group range forum is operational.,90.4,matched
+groq,02,1,risks,expected,Buyers fear becoming order-takers and disengage,,,MISSED
+groq,02,1,risks,expected,Norwegian local brands get delisted and Norway loses customers,,,MISSED
+groq,02,1,risks,extra,,Buyer anxiety could lead to reduced morale or turnover.,,EXTRA (not in answer key)
+groq,02,1,risks,extra,,Delay in delivering the shared category tree could postpone implementation of the new decision rights.,,EXTRA (not in answer key)
+groq,02,1,risks,extra,,"Separate PIM systems limit visibility of product ranges, hindering consistent decision making.",,EXTRA (not in answer key)
+groq,02,1,dependencies,expected,New assortment decision rights going live depends on Shared category tree and one product data source,Implementation of new decision rights (core/local range governance) depends on Shared category tree,68.0,matched
+groq,02,1,dependencies,expected,Shared category tree depends on Category managers agreeing the tree,,,MISSED
+groq,02,1,dependencies,extra,,Pricing decision for the local range depends on Henrik Dahl and Maja Persson pricing options,,EXTRA (not in answer key)
+groq,02,1,dependencies,extra,,Buyer briefing rollout depends on Ole Madsen draft of key messages,,EXTRA (not in answer key)
+groq,02,1,dependencies,extra,,Final RACI adoption depends on Karin Ekström draft RACI by 13 Nov,,EXTRA (not in answer key)
+gemini,03,1,decisions,expected,"One points currency across all four markets, with points converting to vouchers and three tiers on top",,,MISSED
+gemini,03,1,decisions,expected,"Keep the banner programme names for customers for now (Aurora Plus in DK, Lumi Club in SE/NO/FI)",Maintain existing banner names (Aurora Plus and Lumi Club) for customer-facing operations while unifying the backend programme.,65.6,matched
+gemini,03,1,decisions,extra,,"Adopt a unified loyalty programme backbone consisting of a single points currency, points-to-voucher conversion, and three membership tiers.",,EXTRA (not in answer key)
+gemini,03,1,open_issues,expected,Migration approach: automatic migration or fresh consent,,,MISSED
+gemini,03,1,open_issues,expected,Points conversion rate between the programmes,Points conversion rate between legacy Lumi Club and Aurora Plus points.,69.3,matched
+gemini,03,1,open_issues,expected,Whether the Swedish birthday bonus stays as a local add-on,Retention of Swedish birthday bonus as a local add-on.,77.7,matched
+gemini,03,1,open_issues,extra,,Migration approach for existing members (automatic vs. manual).,,EXTRA (not in answer key)
+gemini,03,1,actions,expected,Give a legal opinion on consent for migrating members,Provide legal opinion on migration consent requirements.,62.4,matched
+gemini,03,1,actions,expected,Model three points conversion options,Model three conversion options for points.,93.7,matched
+gemini,03,1,actions,expected,Pull usage data on the Swedish birthday bonus,Pull usage data on the Swedish birthday bonus.,98.9,matched
+gemini,03,1,actions,expected,Create a customer and store staff communication plan,,,MISSED
+gemini,03,1,risks,expected,Members leave if the points conversion feels unfair (4% of Gold members lost in 2021),,,MISSED
+gemini,03,1,risks,expected,The conversion rate increases the points liability on the balance sheet,,,MISSED
+gemini,03,1,risks,expected,Automatic migration may breach consent rules for older Lumi Club members,Legal non-compliance regarding data privacy and consent for member migration.,57.0,matched
+gemini,03,1,risks,expected,"The app team has no capacity until February, so launch slips",,,MISSED
+gemini,03,1,risks,extra,,Loss of active members due to perceived devaluation of points or benefits.,,EXTRA (not in answer key)
+gemini,03,1,risks,extra,,Technical delay in programme launch due to CRM consolidation dependency.,,EXTRA (not in answer key)
+gemini,03,1,dependencies,expected,Launch of one programme in one app depends on CRM consolidation in Q2 next year,Unified loyalty programme launch depends on CRM platform consolidation (Q2),72.2,matched
+gemini,03,1,dependencies,expected,Migration approach depends on Legal opinion on consent,Member migration strategy depends on Legal review of consent texts,71.7,matched
+gemini,03,1,dependencies,expected,Promising a conversion rate to members depends on Finance modelling of conversion options,,,MISSED
+gemini,04,1,decisions,expected,"One shared ticket system for the Group, with customers served in their own language by local staff",Maintain local language support for customers via local employees.,56.2,matched
+gemini,04,1,decisions,expected,Minimum opening hours until 18:00 on weekdays in all countries; markets can extend at their own cost,Establish a common minimum opening standard of 18:00 on weekdays across all markets.,67.4,matched
+gemini,04,1,decisions,expected,Use the same customer satisfaction measure in all countries,Standardize customer satisfaction measurement across all markets.,68.5,matched
+gemini,04,1,decisions,extra,,Implement one common ticketing system for the entire Group.,,EXTRA (not in answer key)
+gemini,04,1,open_issues,expected,Whether to outsource Finnish weekend cover to an external partner,,,MISSED
+gemini,04,1,open_issues,expected,Which customer satisfaction measure to use,"Selection of specific customer satisfaction metric (e.g., NPS vs. other).",62.9,matched
+gemini,04,1,open_issues,extra,,Weekend coverage strategy for small teams (specifically Finland).,,EXTRA (not in answer key)
+gemini,04,1,open_issues,extra,,Ownership of creating common response templates and knowledge base.,,EXTRA (not in answer key)
+gemini,04,1,actions,expected,Prepare an options paper on outsourcing Finnish weekend cover,Prepare pros/cons analysis for outsourcing weekend coverage.,68.6,matched
+gemini,04,1,actions,expected,Investigate an interim solution for the ticket system before CRM consolidation,Investigate feasibility of a temporary solution for ticketing system prior to Q2 CRM consolidation.,72.3,matched
+gemini,04,1,actions,expected,Lead communication to staff about the shared team,Develop and distribute communication plan regarding the 'common team' structure to mitigate staff anxiety.,62.4,matched
+gemini,04,1,actions,expected,Create shared response templates and a knowledge base,,,MISSED
+gemini,04,1,actions,expected,Choose the common customer satisfaction measure,,,MISSED
+gemini,04,1,risks,expected,Staff in the small Swedish and Finnish teams fear job cuts,,,MISSED
+gemini,04,1,risks,expected,Outsourcing weekend cover lowers service quality,,,MISSED
+gemini,04,1,risks,expected,The ticket system is delayed until CRM consolidation in Q2,Delay in ticketing system implementation due to CRM consolidation timeline.,71.4,matched
+gemini,04,1,risks,extra,,Staff anxiety and potential turnover due to fear of headcount reductions.,,EXTRA (not in answer key)
+gemini,04,1,risks,extra,,Inconsistent customer service quality due to lack of shared knowledge base/templates.,,EXTRA (not in answer key)
+gemini,04,1,dependencies,expected,Shared ticket system go-live depends on CRM consolidation in Q2 next year,Common ticketing system implementation depends on CRM system consolidation,69.0,matched

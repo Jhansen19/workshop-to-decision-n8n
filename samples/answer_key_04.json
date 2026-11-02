@@ -1,0 +1,27 @@
+{
+  "workshop_summary": "Session 1 on one shared Nordic customer service: system, language, opening hours and measurement (transcript in Danish).",
+  "decisions": [
+    { "decision": "One shared ticket system for the Group, with customers served in their own language by local staff", "scope": "Group with local variant" },
+    { "decision": "Minimum opening hours until 18:00 on weekdays in all countries; markets can extend at their own cost", "scope": "Group with local variant" },
+    { "decision": "Use the same customer satisfaction measure in all countries", "scope": "Group" }
+  ],
+  "open_issues": [
+    { "issue": "Whether to outsource Finnish weekend cover to an external partner", "escalate_to": "Next meeting" },
+    { "issue": "Which customer satisfaction measure to use", "escalate_to": "Louise" }
+  ],
+  "actions": [
+    { "action": "Prepare an options paper on outsourcing Finnish weekend cover", "owner": "Mika", "due_date": "next meeting" },
+    { "action": "Investigate an interim solution for the ticket system before CRM consolidation", "owner": "Jesper", "due_date": null },
+    { "action": "Lead communication to staff about the shared team", "owner": "Louise", "due_date": null },
+    { "action": "Create shared response templates and a knowledge base", "owner": "UNASSIGNED", "due_date": null },
+    { "action": "Choose the common customer satisfaction measure", "owner": "Louise", "due_date": null }
+  ],
+  "risks": [
+    { "risk": "Staff in the small Swedish and Finnish teams fear job cuts", "source": "stated" },
+    { "risk": "Outsourcing weekend cover lowers service quality", "source": "stated" },
+    { "risk": "The ticket system is delayed until CRM consolidation in Q2", "source": "inferred" }
+  ],
+  "dependencies": [
+    { "dependent": "Shared ticket system go-live", "depends_on": "CRM consolidation in Q2 next year", "owner": "Jesper" }
+  ]
+}

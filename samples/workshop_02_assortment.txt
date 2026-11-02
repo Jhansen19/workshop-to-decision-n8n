@@ -1,0 +1,130 @@
+Workshop: Group vs. Local Assortment – Decision Rights
+Company: Aurora Beauty Group (fictional) – banners Aurora (DK) and Lumi (SE/NO/FI)
+Date: 21 October 2026, 13:00–15:00, Stockholm office + Teams
+Attendees: Karin Ekström (Group Category Director), Ole Madsen (DK Commercial Lead),
+Maja Persson (SE Commercial Lead), Ingrid Solberg (NO Commercial Lead), Aino Virtanen (FI
+Commercial Lead), Henrik Dahl (Group Pricing), Rasmus Juul (Group Data & PIM), facilitator
+Notes taken by: facilitator
+
+---
+
+Facilitator: The purpose today is decision rights. Who decides what goes on the shelf, where.
+We have a draft principle from the operating model work: "Group decides by default, markets
+decide by exception." Today we try to make that concrete. Karin?
+
+Karin: Thanks. Today each banner has its own buyers. We buy many of the same brands twice and
+negotiate separately. Some suppliers love that, because they can play us against each other.
+The proposal from the operating model team is that Group Category Management owns the core
+range, roughly eighty percent of SKUs, and markets own a local range of up to twenty percent.
+
+Maja: Twenty percent of SKUs or twenty percent of sales? That's a big difference.
+
+Karin: SKUs. Sales would be more complicated to manage.
+
+Ingrid: For Norway, the local brands are a big part of why customers come to us. Some of
+those are Norwegian skincare brands that nobody in Copenhagen has heard of. If they end up in
+the "core" bucket and get delisted because they don't perform in Denmark, we lose customers.
+
+Karin: That's exactly what the local range is for.
+
+Ingrid: But twenty percent might not be enough for us.
+
+Ole: Denmark is probably the opposite. We'd use maybe ten percent local.
+
+Facilitator: Can we try to land the principle first, and then deal with the share?
+
+Karin: Proposal: core range is decided by Group Category Management. Local range up to twenty
+percent of SKUs per category, decided by the market commercial lead. Can we agree that?
+
+Maja: Yes for the principle.
+
+Aino: Yes.
+
+Ingrid: Yes, with the share reviewed after six months.
+
+Karin: Fine, review after six months. Agreed.
+
+Facilitator: Second topic: new brand listings.
+
+Karin: Today any market can list a new brand. I'd propose any new brand that we'd list in more
+than one market goes through the Group range forum. Single-market listings stay local, inside
+the twenty percent.
+
+Ole: Who sits on that forum?
+
+Karin: Me, the four commercial leads, and Henrik for pricing. Monthly.
+
+Ole: OK, that works. Agreed from my side.
+
+(others agree)
+
+Facilitator: So the multi-market listing rule is agreed. Third topic, and I know this is the
+difficult one: pricing on the local range.
+
+Henrik: From Group Pricing, I'd want pricing on the full range, including local. Otherwise we
+can't manage margin.
+
+Maja: But if we own the local range and can't price it, we don't really own it.
+
+Ingrid: Agree with Maja. The whole point is that we know the local market.
+
+Henrik: Then at least give me a guardrail. A margin floor.
+
+Karin: I don't think we'll solve this today. Henrik, Maja, can you work on two options together
+and bring them back next session?
+
+Henrik: Sure.
+
+Maja: Yes.
+
+Facilitator: When is the next session?
+
+Karin: Two weeks. 4th of November.
+
+Rasmus: Can I add something? None of this works until we can actually see each other's ranges.
+Right now the product data sits in two PIM systems, with different category trees. Karin's team
+can't see what's in the Lumi range without asking someone to export it to Excel. We need one
+category tree and one product data source before the new decision rights can go live.
+
+Karin: How long?
+
+Rasmus: The category tree, maybe four weeks if the business agrees on it. Merging the PIM
+systems is a bigger project, next year. But we could start with a shared reporting view.
+
+Karin: OK. Let's get the shared category tree done first. Rasmus, can you lead that?
+
+Rasmus: I can lead the technical side. I need the category managers to agree the tree.
+
+Karin: I'll get them into a room.
+
+Ole: Practical point. Before we tell the buyers, we need to brief them properly. If they hear
+this through rumours, they'll think their jobs are going. Some of the Lumi buyers already
+think that.
+
+Maja: Yes, there's real anxiety in my team. Several of them have asked me directly if they'll
+be "order-takers for Copenhagen".
+
+Karin: That's not the intention at all, but I understand. We need a proper briefing. Ole, can
+you draft the key messages?
+
+Ole: I can draft them, yes.
+
+Facilitator: By when?
+
+Ole: Let me check my calendar and come back.
+
+Aino: And we need the actual RACI written down. Who is responsible, accountable, consulted,
+for each step from listing to delisting. Otherwise in three months everyone will remember this
+meeting differently.
+
+Karin: Agreed. I'll own the RACI. Draft by the 13th of November.
+
+Henrik: One risk I want on the record: if suppliers find out we're centralising, some of them
+will try to lock in better terms with individual markets before the forum is in place.
+
+Karin: Good point. We should tell the key suppliers ourselves, at the right time. Let's think
+about who does that.
+
+Facilitator: Wrapping up. Thank you all.
+
+[End of notes]

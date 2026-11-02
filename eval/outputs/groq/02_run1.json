@@ -1,0 +1,227 @@
+{
+  "transcript_id": "02",
+  "model": "groq",
+  "run": 1,
+  "latency_s": 11.32,
+  "error": null,
+  "extraction": {
+    "workshop_summary": "The group agreed that the core product range (≈80% of SKUs) is owned by Group Category Management while each market may own up to 20% of SKUs as a local range. The local share will be reviewed after six months. Multi‑market new brand listings will be routed through a monthly Group range forum (Karin, the four commercial leads, and Henrik). Actions were assigned to develop a shared category tree, draft buyer briefings, create a RACI, and produce pricing options for the local range. Open issues remain around the exact local share per market, pricing rules for the local range, full PIM integration, timing of buyer briefings, and supplier communication.",
+    "decisions": [
+      {
+        "decision": "Group Category Management owns the core range (≈80% of SKUs) and each market commercial lead owns a local range up to 20% of SKUs per category.",
+        "rationale": "Avoid duplicate negotiations and allow markets to keep unique local brands.",
+        "scope": "Group with local variant",
+        "decision_owner": "Karin Ekström",
+        "requires_signoff": false
+      },
+      {
+        "decision": "The local range share will be reviewed after six months.",
+        "rationale": "Markets expressed concerns that 20% may be insufficient, especially Norway.",
+        "scope": "Group",
+        "decision_owner": "Karin Ekström",
+        "requires_signoff": false
+      },
+      {
+        "decision": "New brands listed in more than one market must be approved by the Group range forum; single‑market listings stay within the local range.",
+        "rationale": "Ensure consistency and leverage group buying power for multi‑market brands.",
+        "scope": "Group with local variant",
+        "decision_owner": "Karin Ekström",
+        "requires_signoff": false
+      },
+      {
+        "decision": "The Group range forum will consist of Karin, the four market commercial leads, and Henrik (Pricing) and will meet monthly.",
+        "rationale": "Provide clear governance for multi‑market brand listings.",
+        "scope": "Group",
+        "decision_owner": "Karin Ekström",
+        "requires_signoff": false
+      },
+      {
+        "decision": "Next workshop session scheduled for 4 November 2026.",
+        "rationale": "Provide a deadline to deliver pricing options and other open items.",
+        "scope": "Group",
+        "decision_owner": "Karin Ekström",
+        "requires_signoff": false
+      },
+      {
+        "decision": "Rasmus Juul will lead the technical work to create a shared category tree; Karin will convene category managers to agree the tree.",
+        "rationale": "A single category tree is required before the new decision rights can be operationalised.",
+        "scope": "Group",
+        "decision_owner": "Rasmus Juul",
+        "requires_signoff": false
+      },
+      {
+        "decision": "Ole Madsen will draft the key briefing messages for buyers about the new decision rights.",
+        "rationale": "Prevent rumors and anxiety among buyer teams.",
+        "scope": "Group",
+        "decision_owner": "Ole Madsen",
+        "requires_signoff": false
+      },
+      {
+        "decision": "Karin Ekström will own the RACI for the end‑to‑end process (listing to delisting) and will deliver a draft by 13 November 2026.",
+        "rationale": "Clarify responsibilities and avoid confusion later.",
+        "scope": "Group",
+        "decision_owner": "Karin Ekström",
+        "requires_signoff": false
+      }
+    ],
+    "open_issues": [
+      {
+        "issue": "Appropriate percentage of local SKU range for each market (e.g., Norway may need more than 20%).",
+        "options_discussed": [
+          "Keep the 20% cap for all markets",
+          "Allow market‑specific adjustments after review"
+        ],
+        "escalate_to": "Group Leadership"
+      },
+      {
+        "issue": "Pricing methodology for the local range (full group pricing vs. margin floor vs. other).",
+        "options_discussed": [
+          "Group sets prices for all SKUs",
+          "Group provides a margin floor, markets set final prices",
+          "Hybrid approach to be defined"
+        ],
+        "escalate_to": "Group Pricing (Henrik Dahl)"
+      },
+      {
+        "issue": "Full integration of the two PIM systems (timeline and scope).",
+        "options_discussed": [
+          "Start with a shared reporting view now",
+          "Merge PIM systems next year"
+        ],
+        "escalate_to": "IT Leadership"
+      },
+      {
+        "issue": "Deadline for Ole Madsen to deliver the buyer briefing draft.",
+        "options_discussed": [
+          "Deliver before the next workshop (4 Nov)",
+          "Deliver within two weeks of today"
+        ],
+        "escalate_to": "Ole Madsen"
+      },
+      {
+        "issue": "Who will communicate the centralisation plan to key suppliers.",
+        "options_discussed": [
+          "Group communication led by Karin",
+          "Market‑level communication"
+        ],
+        "escalate_to": "Karin Ekström"
+      }
+    ],
+    "actions": [
+      {
+        "action": "Lead technical work to create a shared category tree.",
+        "owner": "Rasmus Juul",
+        "due_date": null,
+        "priority": "High",
+        "linked_decision": "Rasmus Juul will lead the technical work to create a shared category tree; Karin will convene category managers to agree the tree."
+      },
+      {
+        "action": "Convene category managers to agree on the shared category tree.",
+        "owner": "Karin Ekström",
+        "due_date": null,
+        "priority": "High",
+        "linked_decision": "Rasmus Juul will lead the technical work to create a shared category tree; Karin will convene category managers to agree the tree."
+      },
+      {
+        "action": "Draft key briefing messages for buyers about the new decision rights.",
+        "owner": "Ole Madsen",
+        "due_date": null,
+        "priority": "Medium",
+        "linked_decision": "Ole Madsen will draft the key briefing messages for buyers about the new decision rights."
+      },
+      {
+        "action": "Develop two pricing options (full group pricing vs. margin floor) for the local range and present them at the next session.",
+        "owner": "Henrik Dahl",
+        "due_date": "2026-11-04",
+        "priority": "High",
+        "linked_decision": "Pricing methodology for the local range (full group pricing vs. margin floor vs. other)."
+      },
+      {
+        "action": "Collaborate with Maja Persson on the pricing options for the local range.",
+        "owner": "Maja Persson",
+        "due_date": "2026-11-04",
+        "priority": "High",
+        "linked_decision": "Pricing methodology for the local range (full group pricing vs. margin floor vs. other)."
+      },
+      {
+        "action": "Draft the RACI for the listing‑to‑delisting process.",
+        "owner": "Karin Ekström",
+        "due_date": "2026-11-13",
+        "priority": "High",
+        "linked_decision": "Karin Ekström will own the RACI for the end‑to‑end process (listing to delisting) and will deliver a draft by 13 November 2026."
+      },
+      {
+        "action": "Set up a shared reporting view of product data across markets.",
+        "owner": "Rasmus Juul",
+        "due_date": null,
+        "priority": "Medium",
+        "linked_decision": "Rasmus Juul will lead the technical work to create a shared category tree; Karin will convene category managers to agree the tree."
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Suppliers may try to lock in better terms with individual markets before the Group range forum is operational.",
+        "impact": "High",
+        "likelihood": "Medium",
+        "mitigation": "Proactively inform key suppliers about the upcoming centralisation and timeline.",
+        "owner": "Karin Ekström",
+        "source": "stated"
+      },
+      {
+        "risk": "Buyer anxiety could lead to reduced morale or turnover.",
+        "impact": "Medium",
+        "likelihood": "Medium",
+        "mitigation": "Provide clear briefing messages and involve buyers early in the change process.",
+        "owner": "Ole Madsen",
+        "source": "inferred"
+      },
+      {
+        "risk": "Delay in delivering the shared category tree could postpone implementation of the new decision rights.",
+        "impact": "Medium",
+        "likelihood": "Medium",
+        "mitigation": "Assign clear ownership (Rasmus) and fast‑track agreement with category managers.",
+        "owner": "Rasmus Juul",
+        "source": "inferred"
+      },
+      {
+        "risk": "Separate PIM systems limit visibility of product ranges, hindering consistent decision making.",
+        "impact": "Medium",
+        "likelihood": "Medium",
+        "mitigation": "Start with a shared reporting view while planning full PIM integration for next year.",
+        "owner": "Rasmus Juul",
+        "source": "inferred"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependent": "Implementation of new decision rights (core/local range governance)",
+        "depends_on": "Shared category tree",
+        "owner": "Karin Ekström"
+      },
+      {
+        "dependent": "Pricing decision for the local range",
+        "depends_on": "Henrik Dahl and Maja Persson pricing options",
+        "owner": "Karin Ekström"
+      },
+      {
+        "dependent": "Buyer briefing rollout",
+        "depends_on": "Ole Madsen draft of key messages",
+        "owner": "Ole Madsen"
+      },
+      {
+        "dependent": "Final RACI adoption",
+        "depends_on": "Karin Ekström draft RACI by 13 Nov",
+        "owner": "Karin Ekström"
+      }
+    ],
+    "governance_flags": [
+      "5 open issue(s) need escalation"
+    ],
+    "model_used": "groq",
+    "run_id": "eval-1793260075728",
+    "workshop": "Evaluation run",
+    "workshop_date": "",
+    "markets": ""
+  },
+  "memo": "# Evaluation run: Decision Memo  \n** |  | eval-1793260075728**\n\n## Bottom line  \nThe Group will own the core product range (≈80 % of SKUs) while each market may own up to 20 % as a local range, with a six‑month review. The next workshop on 4 Nov 2026 must approve pricing options for the local range and the draft RACI. The biggest risk is supplier attempts to secure better terms with individual markets before the Group range forum is operational.\n\n## Decisions made  \n\n| Decision | Scope | Owner |\n|---|---|---|\n| Group Category Management owns the core range (≈80 % of SKUs); each market commercial lead owns a local range up to 20 % per category | Group with local variant | Karin Ekström |\n| Local range share will be reviewed after six months | Group | Karin Ekström |\n| New brands listed in > one market must be approved by the Group range forum; single‑market listings stay local | Group with local variant | Karin Ekström |\n| Group range forum will consist of Karin, the four market commercial leads, and Henrik (Pricing) and will meet monthly | Group | Karin Ekström |\n| Next workshop session scheduled for 4 Nov 2026 | Group | Karin Ekström |\n| Rasmus Juul will lead the technical work to create a shared category tree; Karin will convene category managers to agree the tree | Group | Rasmus Juul |\n| Ole Madsen will draft the key briefing messages for buyers about the new decision rights | Group | Ole Madsen |\n| Karin Ekström will own the RACI for the end‑to‑end process (listing to delisting) and will deliver a draft by 13 Nov 2026 | Group | Karin Ekström |\n\n## Decisions requiring your sign‑off  \n*None.*\n\n## Open issues for escalation  \n\n1. **Local SKU share per market** – Options: keep 20 % cap for all markets or allow market‑specific adjustments after review. *Recommended next step:* Escalate to Group Leadership for a decision on market‑specific caps.  \n2. **Pricing methodology for the local range** – Options: full group pricing, margin floor set by group, or a hybrid approach. *Recommended next step:* Escalate to Group Pricing (Henrik Dahl) to approve the approach before the 4 Nov session.  \n3. **Full PIM integration** – Options: start with a shared reporting view now or merge PIM systems next year. *Recommended next step:* Escalate to IT Leadership to confirm timeline and resources.  \n4. **Buyer‑briefing draft deadline** – Options: deliver before the next workshop (4 Nov) or within two weeks of today. *Recommended next step:* Escalate to Ole Madsen to commit to the earlier deadline.  \n5. **Supplier communication of centralisation plan** – Options: Group‑level communication led by Karin or market‑level communication. *Recommended next step:* Escalate to Karin Ekström to define the communication lead.\n\n## Key risks & dependencies  \n\n| Risk | Impact | Likelihood | Mitigation |\n|---|---|---|---|\n| Suppliers may lock in better terms with individual markets before the Group range forum is operational | High | Medium | Proactively inform key suppliers of the centralisation timeline (owner: Karin Ekström) |\n| Delay in delivering the shared category tree could postpone implementation of the new decision rights | Medium | Medium | Assign clear ownership to Rasmus Juul and fast‑track agreement with category managers |\n| Buyer anxiety could reduce morale or cause turnover | Medium | Medium | Provide clear briefing messages and involve buyers early (owner: Ole Madsen) |\n\n## Next steps  \n\n| Action | Owner | Due |\n|---|---|---|\n| Lead technical work to create a shared category tree | Rasmus Juul |  |\n| Convene category managers to agree on the shared category tree | Karin Ekström |  |\n| Draft key briefing messages for buyers about the new decision rights | Ole Madsen |  |\n| Develop two pricing options (full group pricing vs. margin floor) for the local range and present them at the next session | Henrik Dahl | 4 Nov 2026 |\n| Collaborate with Maja Persson on the pricing options for the local range | Maja Persson | 4 Nov 2026 |\n| Draft the RACI for the listing‑to‑delisting process | Karin Ekström | 13 Nov 2026 |\n| Set up a shared reporting view of product data across markets | Rasmus Juul |  |\n\n## Governance flags  \n- 5 open issues need escalation."
+}

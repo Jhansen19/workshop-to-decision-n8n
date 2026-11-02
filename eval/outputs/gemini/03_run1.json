@@ -1,0 +1,121 @@
+{
+  "transcript_id": "03",
+  "model": "gemini",
+  "run": 1,
+  "latency_s": 76.56,
+  "error": null,
+  "extraction": {
+    "workshop_summary": "The session established the backbone of a unified Nordic loyalty programme for Aurora Beauty Group, confirming a single points currency, voucher-based rewards, and a three-tier structure. The group agreed to maintain existing banner names (Aurora Plus and Lumi Club) for the customer-facing side while unifying the backend. Key blockers include legal consent for member migration, financial modeling of points conversion, and CRM platform consolidation scheduled for Q2.",
+    "decisions": [
+      {
+        "decision": "Adopt a unified loyalty programme backbone consisting of a single points currency, points-to-voucher conversion, and three membership tiers.",
+        "rationale": "Balances the voucher-based preference of Danish customers with the tier-based preference of Swedish/Norwegian/Finnish customers.",
+        "scope": "Group",
+        "decision_owner": "Camilla Brandt",
+        "requires_signoff": true
+      },
+      {
+        "decision": "Maintain existing banner names (Aurora Plus and Lumi Club) for customer-facing operations while unifying the backend programme.",
+        "rationale": "Protects brand equity and avoids immediate disruption while the broader banner strategy is under review.",
+        "scope": "Group with local variant",
+        "decision_owner": "Camilla Brandt",
+        "requires_signoff": false
+      }
+    ],
+    "open_issues": [
+      {
+        "issue": "Migration approach for existing members (automatic vs. manual).",
+        "options_discussed": [
+          "Automatic migration",
+          "Manual re-registration"
+        ],
+        "escalate_to": "Signe Lund"
+      },
+      {
+        "issue": "Points conversion rate between legacy Lumi Club and Aurora Plus points.",
+        "options_discussed": [
+          "Three conversion models to be developed by Finance"
+        ],
+        "escalate_to": "Mikael Nieminen"
+      },
+      {
+        "issue": "Retention of Swedish birthday bonus as a local add-on.",
+        "options_discussed": [
+          "Keep as local variant",
+          "Remove to simplify programme"
+        ],
+        "escalate_to": "Camilla Brandt"
+      }
+    ],
+    "actions": [
+      {
+        "action": "Provide legal opinion on migration consent requirements.",
+        "owner": "Signe Lund",
+        "due_date": "2026-11-30",
+        "priority": "High",
+        "linked_decision": "N/A"
+      },
+      {
+        "action": "Model three conversion options for points.",
+        "owner": "Mikael Nieminen",
+        "due_date": null,
+        "priority": "High",
+        "linked_decision": "N/A"
+      },
+      {
+        "action": "Pull usage data on the Swedish birthday bonus.",
+        "owner": "Johan Bergström",
+        "due_date": null,
+        "priority": "Medium",
+        "linked_decision": "N/A"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Loss of active members due to perceived devaluation of points or benefits.",
+        "impact": "High",
+        "likelihood": "High",
+        "mitigation": "Careful financial modeling and clear communication plan.",
+        "owner": "Mikael Nieminen",
+        "source": "stated"
+      },
+      {
+        "risk": "Legal non-compliance regarding data privacy and consent for member migration.",
+        "impact": "High",
+        "likelihood": "Medium",
+        "mitigation": "Legal review and external opinion for Sweden.",
+        "owner": "Signe Lund",
+        "source": "stated"
+      },
+      {
+        "risk": "Technical delay in programme launch due to CRM consolidation dependency.",
+        "impact": "High",
+        "likelihood": "High",
+        "mitigation": "Aligning launch timeline with Q2 CRM consolidation.",
+        "owner": "Pekka Laine",
+        "source": "inferred"
+      }
+    ],
+    "dependencies": [
+      {
+        "dependent": "Unified loyalty programme launch",
+        "depends_on": "CRM platform consolidation (Q2)",
+        "owner": "Pekka Laine"
+      },
+      {
+        "dependent": "Member migration strategy",
+        "depends_on": "Legal review of consent texts",
+        "owner": "Signe Lund"
+      }
+    ],
+    "governance_flags": [
+      "3 open issue(s) need escalation"
+    ],
+    "model_used": "gemini",
+    "run_id": "eval-1793623532743",
+    "workshop": "Evaluation run",
+    "workshop_date": "",
+    "markets": ""
+  },
+  "memo": "# Evaluation run: Decision Memo\n\n**Date: N/A | Markets: N/A | Run ID: eval-1793623532743**\n\n## Bottom line\nThe steering committee has established a unified Nordic loyalty programme backbone featuring a single points currency, voucher-based rewards, and a three-tier structure. Sign-off is required for the programme structure to proceed with financial and legal planning. The primary risk is the potential loss of active members during the migration process due to perceived benefit devaluation.\n\n## Decisions made\n\n| Decision | Scope | Owner |\n| :--- | :--- | :--- |\n| Adopt a unified loyalty programme backbone (single currency, voucher conversion, three tiers). | Group | Camilla Brandt |\n| Maintain existing banner names (Aurora Plus and Lumi Club) while unifying the backend. | Group with local variant | Camilla Brandt |\n\n## Decisions requiring your sign-off\n\n1. **Unified Programme Backbone:** Approve the adoption of a single points currency, voucher-based rewards, and a three-tier structure. **Recommendation:** Approve to enable immediate financial modeling and technical planning.\n\n## Open issues for escalation\n\n*   **Member Migration:** Automatic vs. manual migration. **Recommendation:** Signe Lund to determine approach based on legal consent requirements.\n*   **Points Conversion:** Determining the rate between legacy Lumi Club and Aurora Plus points. **Recommendation:** Mikael Nieminen to finalize one of the three financial models currently in development.\n*   **Local Variants:** Retention of the Swedish birthday bonus. **Recommendation:** Camilla Brandt to decide based on usage data analysis.\n\n## Key risks & dependencies\n\n1. **Member Attrition:** High risk of losing active members due to perceived devaluation of points or benefits.\n2. **Legal Compliance:** Risk of non-compliance regarding data privacy and consent for member migration.\n3. **CRM Dependency:** Technical launch is dependent on the CRM platform consolidation scheduled for Q2.\n\n## Next steps\n\n| Action | Owner | Due |\n| :--- | :--- | :--- |\n| Provide legal opinion on migration consent requirements. | Signe Lund | 2026-11-30 |\n| Model three conversion options for points. | Mikael Nieminen | N/A |\n| Pull usage data on the Swedish birthday bonus. | Johan Bergström | N/A |\n\n## Governance flags\n* 3 open issue(s) need escalation"
+}

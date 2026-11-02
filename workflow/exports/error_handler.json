@@ -1,0 +1,54 @@
+{
+  "id": "ErrorHandlerWf01",
+  "name": "Error Handler",
+  "nodes": [
+    {
+      "id": "cc577c0c-ccc9-44c7-be8a-0b313cc0e2dd",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "96a5be07-4747-436e-81f7-cfc14342a87e",
+      "name": "Email me the error",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "sendTo": "you@example.com",
+        "subject": "=[n8n error] {{ $json.workflow.name }}",
+        "emailType": "text",
+        "message": "=Workflow: {{ $json.workflow.name }}\nNode: {{ $json.execution.lastNodeExecuted }}\nError: {{ $json.execution.error.message }}\nExecution: {{ $json.execution.url }}",
+        "options": {
+          "appendAttribution": false
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Email me the error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false
+}

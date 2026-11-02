@@ -1,0 +1,9 @@
+{
+  "transcript_id": "03",
+  "model": "groq",
+  "run": 1,
+  "latency_s": 9.04,
+  "error": "500 Server Error: Internal Server Error for url: http://localhost:5678/webhook/eval-extract",
+  "extraction": {},
+  "memo": ""
+}

@@ -1,0 +1,23 @@
+{
+  "_instructions": "FORMAT EXAMPLE, deliberately incomplete. Copy to answer_key_01.json (02, 03, 04) and list everything YOU would extract from the matching workshop_XX_*.txt. Write keys before looking at transcript_design_notes.md or any model output. Only the text fields and action owners are scored; other fields are optional. Use \"UNASSIGNED\" when no owner is named. Keep each item to one short, plain English sentence (also for the Danish transcript).",
+  "workshop_summary": "Session 2 on harmonising replenishment across DK, SE, NO and FI.",
+  "decisions": [
+    { "decision": "Adopt one Group replenishment model with daily auto-replenishment", "scope": "Group" },
+    { "decision": "Norway gets a lead-time parameter override instead of a separate process", "scope": "Group with local variant" }
+  ],
+  "open_issues": [
+    { "issue": "Choose the pilot market: Sweden or Finland", "escalate_to": "Steering committee" }
+  ],
+  "actions": [
+    { "action": "Own the item master data cleanup across both ERPs", "owner": "Anna" },
+    { "action": "Nominate two business people to support the data cleanup", "owner": "UNASSIGNED" },
+    { "action": "Take the pilot market decision to the steering committee", "owner": "Mette" }
+  ],
+  "risks": [
+    { "risk": "The DC cannot yet pick a daily replenishment order profile" },
+    { "risk": "Duplicate SKUs between the two ERPs delay harmonisation by about 8 weeks" }
+  ],
+  "dependencies": [
+    { "dependent": "Harmonised replenishment", "depends_on": "Item master cleanup" }
+  ]
+}
