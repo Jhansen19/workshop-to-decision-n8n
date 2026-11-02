@@ -5,6 +5,8 @@
 
 ![A successful run of the main workflow in n8n](docs/workflow_run.png)
 
+**▶ [Watch the demo video (11 min, with chapters)](https://jhansen19.github.io/workshop-to-decision/)**
+
 ## The problem
 After every workshop, someone has to turn pages of notes into a clear list: what was decided, who does
 what, and what could go wrong. That can easily take 30 minutes to an hour per meeting, and it's easy to
